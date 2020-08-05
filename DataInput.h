@@ -1,9 +1,25 @@
-#pragma once
+#include <string>
+#include <iostream>
+#include <vector>
+#include <array>
+
+using namespace std;
+
+
 class DataInput
 
 {
-	public:
+public:
 		DataInput();
 		~DataInput();
+
+		inline int GetPlayerID() {};
+		//int GetPlayerRoute();
+
+		array<int, 10> GetPlayerRoute();
+protected:
+	string mPlayerId;//PlayerID
+	
+	
 };
 
