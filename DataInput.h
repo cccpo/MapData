@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <random>
 
 using namespace std;
 
@@ -18,8 +19,9 @@ public:
 
 		array<int, 10> GetPlayerRoute();
 protected:
+
 	string mPlayerId;//PlayerID
-	
+	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };
 	
 };
 

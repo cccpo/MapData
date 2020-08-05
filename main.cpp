@@ -13,7 +13,7 @@ int main() {
 	array<int,10> player_route=data_input.GetPlayerRoute();
 	
 	for (int i = 0; i < 10; i++) {
-		cout << player_route[i]<<endl;
+		cout << player_route[i]<<",";
 	}
 
 

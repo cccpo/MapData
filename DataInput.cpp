@@ -13,5 +13,14 @@ DataInput::~DataInput() {
 //}
 
 array<int,10> DataInput::GetPlayerRoute() {
-	return { 1,2,3,4,5,6,7,8,9,10 };
+	random_device rnd;
+	mt19937 mt(rnd());
+	uniform_int_distribution<int> type(0, 9);//0`9‚Ì”ÍˆÍ‚Å—””­¶
+
+
+	for (int i = 0; i < 10; ++i) {
+		mData[i] = type(mt);
+	}
+	
+	return mData;
 }
