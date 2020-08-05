@@ -1,7 +1,7 @@
 #include "TestDataMaker.h"
 
 #include <fstream>
-TestDataMaker::TestDataMaker() {
+TestDataMaker::TestDataMaker(){
 	//GenerateData();
 }
 
@@ -14,7 +14,7 @@ void TestDataMaker::GeneratePlayerID(char* inPlayerID, const int inLength) {
 }
 
 //データのランダム生成
-void TestDataMaker ::GenerateData() {
+const void TestDataMaker ::GenerateData() {
 	random_device rnd;
 	mt19937 mt(rnd());
 	uniform_int_distribution<int> type(0, 9);//0～9の範囲で乱数発生
@@ -44,7 +44,7 @@ void TestDataMaker ::GenerateData() {
 
 		}
 
-		test_file << "{"<< i<< ","<<mData[i] << "},";
+		test_file << "{"<< i<< ","<<mData[i] << "}";
 	}
 	
 	test_file.close();
