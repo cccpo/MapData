@@ -21,7 +21,7 @@ void TestDataMaker ::GenerateData() {
 	uniform_int_distribution<int> second_number(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
 	uniform_int_distribution<int> third_number(0, 1);//2`4‚Ì”ÍˆÍ‚Å—””­¶
 	
-	ofstream test_file("Test1.txt");
+	ofstream test_file("Test1.log");
 
 	if (test_file.fail()) {
 		/*return */
