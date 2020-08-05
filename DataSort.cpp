@@ -1,6 +1,5 @@
 #include "DataSort.h"
 
-
 DataSort::DataSort() {
 
 }

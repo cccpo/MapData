@@ -4,9 +4,6 @@ class DataSort
 public:
 	DataSort();
 	~DataSort();
-
 protected:
-
-
 };
 
