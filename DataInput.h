@@ -14,6 +14,8 @@ public:
 		DataInput();
 		~DataInput();
 
+		void  LoadData();
+
 		inline int GetPlayerID() {};
 		//int GetPlayerRoute();
 
