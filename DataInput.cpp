@@ -12,6 +12,7 @@ DataInput::~DataInput() {
 //	return mPlayerRoute.size();
 //}
 
+//経路ランダム生成のために作成、現在はTestDataMakerに置いている
 array<int,10> DataInput::GetPlayerRoute() {
 	random_device rnd;
 	mt19937 mt(rnd());
@@ -33,11 +34,9 @@ array<int,10> DataInput::GetPlayerRoute() {
 vector<string> DataInput::GetFileData(string inFileName, vector<string>& ioVectorDatas) {
 	ifstream ifs(inFileName);
 
-
 	if (!ifs)
 	{
 		cout << "Error"<< endl;
-		
 	}
 
 	string tmp;
@@ -45,6 +44,10 @@ vector<string> DataInput::GetFileData(string inFileName, vector<string>& ioVecto
 		ioVectorDatas.push_back(tmp);
 
 	return ioVectorDatas;
+
+}
+
+vector<string> AddFileData(vector<string>& ioVectorDatas) {
 
 }
 

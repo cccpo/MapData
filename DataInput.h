@@ -17,6 +17,7 @@ public:
 
 		void  LoadData();
 		vector<string> GetFileData(string filename, vector<string>& vstr);
+		vector<string> AddFileData(vector<string>& ioVectorDatas);
 
 		inline int GetPlayerID() {};
 		//int GetPlayerRoute();
@@ -26,6 +27,8 @@ protected:
 
 	string mPlayerId;//PlayerID
 	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };
+
+	vector<string> lsl;
 	
 };
 
