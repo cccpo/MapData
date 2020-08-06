@@ -22,7 +22,7 @@ int main() {
 	//
 	//test_data_maker.GenerateData();
 
-	//cout << "SuccessSS" << endl;
+	//cout << "SuccessSSss" << endl;
 
 	vector<string> ioVectorDatas;
 	data_input.GetFileData("test.txt", ioVectorDatas);
