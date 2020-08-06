@@ -11,14 +11,16 @@ int main() {
 	DataInput data_input;
 	TestDataMaker test_data_maker;
 
+	string a = "resource/Test3.log";
+
 	cout << "Make Test Data" << endl;
-	
-	test_data_maker.GenerateData();
+	cout << "FileName" << endl;
+	test_data_maker.GenerateData(1000);
 
 	cout << "Success" << endl;
 
 	vector<string> ioVectorDatas;
-	data_input.GetFileData("Test1.log", ioVectorDatas);
+	data_input.GetFileData(a, ioVectorDatas);
 
 	cout << ioVectorDatas.size() << endl;
 
