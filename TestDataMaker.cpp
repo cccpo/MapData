@@ -14,20 +14,19 @@ void TestDataMaker::GeneratePlayerID(char* inPlayerID, const int inLength) {
 }
 
 //ƒf[ƒ^‚Ìƒ‰ƒ“ƒ_ƒ€¶¬
-const void TestDataMaker ::GenerateData(int inNumOfData) {
+const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 	random_device rnd;
 	mt19937 mt(rnd());
 	uniform_int_distribution<int> type(0, 9);//0`9‚Ì”ÍˆÍ‚Å—””­¶
 	uniform_int_distribution<int> second_number(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
 	uniform_int_distribution<int> third_number(0, 1);//0`1‚Ì”ÍˆÍ‚Å—””­¶
 	
-	string folder_name = "resource/";
-	string test_1 = "test";
-	string test_3 = ".log";
+	const string& folder_name = "resource/";
+	const string& test_1 = "test";
+	const string& test_3 = ".log";
 
 	for (int number = 0; number < inNumOfData; number++) {
 		string test_number = to_string(number);
-
 		string test_data_name = folder_name + test_1 + test_number + test_3;
 
 
@@ -37,7 +36,7 @@ const void TestDataMaker ::GenerateData(int inNumOfData) {
 			cout << "Error:Can't read text" << endl;
 		}
 
-		test_file << "PlayerID:ghf" << endl;
+		test_file << "PlayerID:Player" << number << endl;
 
 		test_file << "PlayerCourse:";
 		for (int number = 0; number < mDataSize; ++number) {
@@ -60,6 +59,7 @@ const void TestDataMaker ::GenerateData(int inNumOfData) {
 		}
 
 		test_file.close();
+
 
 		cout << test_data_name << endl;
 	}

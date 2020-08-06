@@ -16,8 +16,8 @@ public:
 		~DataInput();
 
 		void  LoadData();
-		vector<string> GetFileData(string filename, vector<string>& vstr);
-		vector<string> AddFileData(vector<string>& ioVectorDatas);
+		vector<string> GetFileData(string& filename, vector<string>& vstr);
+		/*vector<string> AddFileData(vector<string>& ioVectorDatas);*/
 
 		inline int GetPlayerID() {};
 		//int GetPlayerRoute();

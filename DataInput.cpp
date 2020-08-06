@@ -31,7 +31,7 @@ array<int,10> DataInput::GetPlayerRoute() {
 	return mData;
 }
 
-vector<string> DataInput::GetFileData(string inFileName, vector<string>& ioVectorDatas) {
+vector<string> DataInput::GetFileData(string& inFileName, vector<string>& ioVectorDatas) {
 	ifstream ifs(inFileName);
 
 	if (!ifs)
@@ -47,7 +47,7 @@ vector<string> DataInput::GetFileData(string inFileName, vector<string>& ioVecto
 
 }
 
-vector<string> AddFileData(vector<string>& ioVectorDatas) {
-
-}
+//vector<string> AddFileData(vector<string>& ioVectorDatas) {
+//
+//}
 
