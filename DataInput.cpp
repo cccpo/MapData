@@ -29,3 +29,22 @@ array<int,10> DataInput::GetPlayerRoute() {
 	
 	return mData;
 }
+
+vector<string> DataInput::GetFileData(string inFileName, vector<string>& ioVectorDatas) {
+	ifstream ifs(inFileName);
+
+
+	if (!ifs)
+	{
+		cout << "Error"<< endl;
+		
+	}
+
+	string tmp;
+	while (getline(ifs, tmp))
+		ioVectorDatas.push_back(tmp);
+
+	return ioVectorDatas;
+
+}
+
