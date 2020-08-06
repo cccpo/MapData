@@ -3,6 +3,7 @@
 #include <vector>
 #include <array>
 #include <random>
+#include <fstream>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
 		~DataInput();
 
 		void  LoadData();
+		vector<string> GetFileData(string filename, vector<string>& vstr);
 
 		inline int GetPlayerID() {};
 		//int GetPlayerRoute();
