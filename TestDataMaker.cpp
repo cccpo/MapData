@@ -14,41 +14,55 @@ void TestDataMaker::GeneratePlayerID(char* inPlayerID, const int inLength) {
 }
 
 //データのランダム生成
-const void TestDataMaker ::GenerateData(string* inName) {
+const void TestDataMaker ::GenerateData(int inNumOfData) {
 	random_device rnd;
 	mt19937 mt(rnd());
 	uniform_int_distribution<int> type(0, 9);//0～9の範囲で乱数発生
 	uniform_int_distribution<int> second_number(2, 4);//2～4の範囲で乱数発生
 	uniform_int_distribution<int> third_number(0, 1);//0～1の範囲で乱数発生
 	
+	string folder_name = "resource/";
+	string test_1 = "test";
+	string test_3 = ".log";
+
+	for (int number = 0; number < inNumOfData; number++) {
+		string test_number = to_string(number);
+
+		string test_data_name = folder_name + test_1 + test_number + test_3;
 
 
-	ofstream test_file(*inName);//出力形式
+		ofstream test_file(test_data_name);//出力形式
 
-	if (test_file.fail()) {
-		cout << "Error:Can't read text" << endl;
-	}
-	
-	test_file << "PlayerID:ghf" <<endl;
-
-	test_file << "PlayerCourse:";
-	for (int i = 0; i < mDataSize; ++i) {
-		if (i == 0) {
-			mData[i] = type(mt);
-		}else {
-			if (mData[i-1] == 0) {
-				mData[i] = mData[i - 1] + third_number(mt);
-			}else if (mData[i-1] == 9) {
-				mData[i] = mData[i - 1] - third_number(mt);
-			}else
-			mData[i] = mData[i - 1] + second_number(mt) - 3;
-
+		if (test_file.fail()) {
+			cout << "Error:Can't read text" << endl;
 		}
 
-		test_file << "{"<< i<< ","<<mData[i] << "}";
+		test_file << "PlayerID:ghf" << endl;
+
+		test_file << "PlayerCourse:";
+		for (int number = 0; number < mDataSize; ++number) {
+			if (number == 0) {
+				mData[number] = type(mt);
+			}
+			else {
+				if (mData[number - 1] == 0) {
+					mData[number] = mData[number - 1] + third_number(mt);
+				}
+				else if (mData[number - 1] == 9) {
+					mData[number] = mData[number - 1] - third_number(mt);
+				}
+				else
+					mData[number] = mData[number - 1] + second_number(mt) - 3;
+
+			}
+
+			test_file << "{" << number << "," << mData[number] << "}";
+		}
+
+		test_file.close();
+
+		cout << test_data_name << endl;
 	}
-	
-	test_file.close();
 
 
 

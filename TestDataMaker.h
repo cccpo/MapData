@@ -16,7 +16,8 @@ public:
 	~TestDataMaker();
 
 	void GeneratePlayerID(char* s, const int len);;
-	const void GenerateData(string* inName);
+	const void GenerateData(int inNumOfData);
+
 protected:
 	string mPlayerId;//PlayerID
 	array<int, 10> mData;
