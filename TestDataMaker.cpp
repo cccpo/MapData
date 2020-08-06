@@ -14,17 +14,18 @@ void TestDataMaker::GeneratePlayerID(char* inPlayerID, const int inLength) {
 }
 
 //ƒf[ƒ^‚Ìƒ‰ƒ“ƒ_ƒ€¶¬
-const void TestDataMaker ::GenerateData() {
+const void TestDataMaker ::GenerateData(string* inName) {
 	random_device rnd;
 	mt19937 mt(rnd());
 	uniform_int_distribution<int> type(0, 9);//0`9‚Ì”ÍˆÍ‚Å—””­¶
 	uniform_int_distribution<int> second_number(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
-	uniform_int_distribution<int> third_number(0, 1);//2`4‚Ì”ÍˆÍ‚Å—””­¶
+	uniform_int_distribution<int> third_number(0, 1);//0`1‚Ì”ÍˆÍ‚Å—””­¶
 	
-	ofstream test_file("Test1.log");
+
+
+	ofstream test_file(*inName);//o—ÍŒ`®
 
 	if (test_file.fail()) {
-		/*return */
 		cout << "Error:Can't read text" << endl;
 	}
 	
