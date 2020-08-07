@@ -3,6 +3,7 @@
 #include <iostream>
 #include <filesystem>
 #include <vector>
+#include <filesystem>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
 	~DataTool();
 
 	vector<string> Split(string str, char del);
+	bool GetFileNames(std::string folderPath, std::vector<std::string>& file_names);
 
 };
 

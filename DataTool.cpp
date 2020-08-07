@@ -29,3 +29,8 @@ vector<string> DataTool::Split(string inWord, char inDeleteWord) {
 
     return result;
 }
+
+bool DataTool::GetFileNames(std::string folderPath, std::vector<std::string>& file_names)
+{
+
+}
