@@ -4,6 +4,7 @@
 
 #include "DataInput.h"
 #include "TestDataMaker.h"
+#include "DataTool.h"
 
 
 using namespace std;
@@ -11,17 +12,19 @@ using namespace std;
 int main() {
 	DataInput data_input;
 	TestDataMaker test_data_maker;
+	DataTool data_tool;
 	
-	chrono::system_clock::time_point start, end;
+	//chrono::system_clock::time_point start, end;
+	chrono::high_resolution_clock::time_point start, end;
 
 	cout << "Make Test Data" << endl;
 	cout << "FileName" << endl;
 	
-	start = chrono::system_clock::now();
+	start = chrono::high_resolution_clock::now();
 
-	test_data_maker.GenerateData(1000);
+	test_data_maker.GenerateData(1000);//テストデータ生成
 
-	end = chrono::system_clock::now();
+	end = chrono::high_resolution_clock::now();
 
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 
