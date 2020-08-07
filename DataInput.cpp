@@ -12,6 +12,10 @@ DataInput::~DataInput() {
 //	return mPlayerRoute.size();
 //}
 
+void DataInput:: LoadData(vector<string>& ioVectorDatas) {
+
+}
+
 //経路ランダム生成のために作成、現在はTestDataMakerに置いている
 array<int,10> DataInput::GetPlayerRoute() {
 	random_device rnd;
@@ -31,7 +35,7 @@ array<int,10> DataInput::GetPlayerRoute() {
 	return mData;
 }
 
-vector<string> DataInput::GetFileData(string& inFileName, vector<string>& ioVectorDatas) {
+vector<string> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
 	ifstream ifs(inFileName);
 
 	if (!ifs)
@@ -41,13 +45,21 @@ vector<string> DataInput::GetFileData(string& inFileName, vector<string>& ioVect
 
 	string tmp;
 	while (getline(ifs, tmp))
-		ioVectorDatas.push_back(tmp);
+		ioVectorDatas.emplace_back(tmp);
+
+	AddFileData(ioVectorDatas);
 
 	return ioVectorDatas;
 
 }
 
-//vector<string> AddFileData(vector<string>& ioVectorDatas) {
-//
-//}
+void DataInput::AddFileData(vector<string>& ioVectorDatas) {
+	//cout << ioVectorDatas.size() << endl;
+	
+	gDataList.emplace_back(ioVectorDatas);
+	
+	for (int i = 0; i < ioVectorDatas.size(); i++)
+		for(int j=0;j < 11; j++)
+		cout << gDataList[i][j] << endl;
+}
 
