@@ -24,13 +24,13 @@ public:
 		void  LoadData(vector<string>& ioVectorDatas);
 
 		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);
-		//vector<string> GetFileData(const string& filename);
+		
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
+
+		void SaveData();
 
 		inline int GetPlayerID() {};
 		//int GetPlayerRoute();
-
-		array<int, 10> GetPlayerRoute();
 protected:
 	DataTool data_tool;
 
