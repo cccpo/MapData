@@ -14,7 +14,7 @@ public:
 	DataTool();
 	~DataTool();
 
-	vector<string> split(string str, char del);
+	vector<string> Split(string str, char del);
 
 };
 

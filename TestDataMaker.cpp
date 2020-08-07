@@ -58,7 +58,7 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 			if (number == 9) {
 				test_file << "{" << number << "," << mData[number] << "}";
 			}else {
-				test_file << "{" << number << "," << mData[number] << "},";
+				test_file << "{" << number << "," << mData[number] << "}.";
 			}
 
 		}
