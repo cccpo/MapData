@@ -72,3 +72,54 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 
 
 }
+
+const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData) {
+	random_device rnd;
+	mt19937 mt(rnd());
+	uniform_int_distribution<int> type(0, 9);//0`9‚Ì”ÍˆÍ‚Å—””­¶
+	uniform_int_distribution<int> second_number(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
+	uniform_int_distribution<int> third_number(0, 1);//0`1‚Ì”ÍˆÍ‚Å—””­¶
+
+
+	const string& folder_name = "resource/";
+	const string& test_1 = "test";
+	const string& test_3 = ".log";
+
+	ofstream test_csv_file("resource/test.csv");//o—ÍŒ`®
+	test_csv_file << "PlayerID" << "," << "PlayerCource" << endl;
+
+	for (int number = 0; number < inNumOfData; number++) {
+		string test_number = to_string(number);
+	
+		test_csv_file << "Player" << number << ",";
+
+	
+			for (int number = 0; number < mDataSize; ++number) {
+				if (number == 0) {
+					mData[number] = type(mt);
+				}
+				else {
+					if (mData[number - 1] == 0) {
+						mData[number] = mData[number - 1] + third_number(mt);
+					}
+					else if (mData[number - 1] == 9) {
+						mData[number] = mData[number - 1] - third_number(mt);
+					}
+					else
+						mData[number] = mData[number - 1] + second_number(mt) - 3;
+
+				}
+
+				if (number == 9) {
+					test_csv_file << "{" << number << "." << mData[number] << "},"<<endl;
+				}else {
+					test_csv_file << "{" << number << "." << mData[number] << "},";
+				}
+
+			}
+
+			
+		
+	}
+	test_csv_file.close();
+}

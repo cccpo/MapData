@@ -28,16 +28,14 @@ vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioV
 
 	string tmp;
 	while (getline(ifs, tmp)) {
-
 		ioVectorDatas.emplace_back(tmp);
 	}
 
 	/*cout << tmp << endl;*/
 
-	player_id = data_tool.Split(ioVectorDatas[0], ':');
+	player_id = data_tool.Split(ioVectorDatas[0], ':');//•ªŠ„
 	player_id.erase(player_id.begin());
 	
-
 	player_route = data_tool.Split(ioVectorDatas[1],':');
 	player_route.erase(player_route.begin());
 
