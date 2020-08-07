@@ -37,6 +37,7 @@ array<int,10> DataInput::GetPlayerRoute() {
 
 vector<string> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
 	ifstream ifs(inFileName);
+	vector<string> player_route,player_id,test3;
 
 	if (!ifs)
 	{
@@ -44,22 +45,33 @@ vector<string> DataInput::GetFileData(const string& inFileName, vector<string>& 
 	}
 
 	string tmp;
-	while (getline(ifs, tmp))
+	while (getline(ifs, tmp)) {
+
 		ioVectorDatas.emplace_back(tmp);
+	}
+
+	/*cout << tmp << endl;*/
+
+	player_id = data_tool.split(ioVectorDatas[0], ':');
+	player_id.erase(player_id.begin());
+	
+
+	player_route = data_tool.split(ioVectorDatas[1],':');
+	player_route.erase(player_route.begin());
 
 	AddFileData(ioVectorDatas);
 
-	return ioVectorDatas;
+	return player_route;
 
 }
 
 void DataInput::AddFileData(vector<string>& ioVectorDatas) {
 	//cout << ioVectorDatas.size() << endl;
 	
-	gDataList.emplace_back(ioVectorDatas);
-	
-	for (int i = 0; i < ioVectorDatas.size(); i++)
-		for(int j=0;j < 11; j++)
-		cout << gDataList[i][j] << endl;
+	//gDataList.emplace_back(ioVectorDatas);
+	//
+	//for (int i = 0; i < ioVectorDatas.size(); i++)
+	//	for(int j=0;j < 11; j++)
+	//	cout << gDataList[i][j] << endl;
 }
 
