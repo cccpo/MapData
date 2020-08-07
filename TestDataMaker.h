@@ -17,6 +17,7 @@ public:
 
 	void GeneratePlayerID(char* s, const int len);;
 	const void GenerateData(const int& ioNumOfData);
+	const void GenerateTestDataCSV(string inFileName);
 
 protected:
 	string mPlayerId;//PlayerID
