@@ -13,16 +13,16 @@ int main() {
 	DataInput data_input;
 	TestDataMaker test_data_maker;
 	DataTool data_tool;
-	
-	//chrono::system_clock::time_point start, end;
+	//
 	//chrono::high_resolution_clock::time_point start, end;
 
 	//cout << "Make Test Data" << endl;
-	//cout << "FileName" << endl;
 	//
 	//start = chrono::high_resolution_clock::now();
 
 	//test_data_maker.GenerateData(1000);//テストデータ生成
+	string ab = "resource/test1.log";
+	test_data_maker.GenerateTestDataCSV(ab, 1000);
 
 	//end = chrono::high_resolution_clock::now();
 
@@ -31,6 +31,7 @@ int main() {
 	//cout << "Success" << endl;
 	//cout << "Time:" << time << endl;
 
+
 	string a = "resource/test1.log";
 
 	vector<string> data_list;
@@ -38,6 +39,8 @@ int main() {
 	vector<int> dala_si;
 	string tesu_a;
 
+	//#TODO 同一フォルダ内のデータをリストに追加する
+	
 	
 	dala_si = data_input.GetFileData(a, data_list);
 
