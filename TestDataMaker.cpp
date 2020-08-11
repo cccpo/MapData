@@ -73,6 +73,7 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 
 }
 
+//データのランダム生成(CSVファイルに書き込み)
 const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData) {
 	random_device rnd;
 	mt19937 mt(rnd());
@@ -80,10 +81,6 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 	uniform_int_distribution<int> second_number(2, 4);//2～4の範囲で乱数発生
 	uniform_int_distribution<int> third_number(0, 1);//0～1の範囲で乱数発生
 
-
-	const string& folder_name = "resource/";
-	const string& test_1 = "test";
-	const string& test_3 = ".log";
 
 	ofstream test_csv_file("resource/test.csv");//出力形式
 	test_csv_file << "PlayerID" << "," << "PlayerCource" << endl;

@@ -17,7 +17,7 @@ public:
 
 	void GeneratePlayerID(char* s, const int len);;
 	const void GenerateData(const int& ioNumOfData);
-	const void GenerateTestDataCSV(string inFileName,int inNumOfData);
+	const void GenerateTestDataCSV(string inFileName,int inNumOfData);//データのランダム生成(CSVファイルに書き込み)
 
 protected:
 	string mPlayerId;//PlayerID
