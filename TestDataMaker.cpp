@@ -74,6 +74,8 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 }
 
 //データのランダム生成(CSVファイルに書き込み)
+//inFileName ファイル名
+//inNumOfData データ数
 const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData) {
 	random_device rnd;
 	mt19937 mt(rnd());
