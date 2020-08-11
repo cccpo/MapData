@@ -77,9 +77,9 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData) {
 	random_device rnd;
 	mt19937 mt(rnd());
-	uniform_int_distribution<int> type(0, 9);//0`9‚Ì”ÍˆÍ‚Å—””­¶
-	uniform_int_distribution<int> second_number(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
-	uniform_int_distribution<int> third_number(0, 1);//0`1‚Ì”ÍˆÍ‚Å—””­¶
+	uniform_int_distribution<int> table_1(0, 9);//0`9‚Ì”ÍˆÍ‚Å—””­¶
+	uniform_int_distribution<int> table_2(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
+	uniform_int_distribution<int> table_3(0, 1);//0`1‚Ì”ÍˆÍ‚Å—””­¶
 
 
 	ofstream test_csv_file("resource/test.csv");//o—ÍŒ`®
@@ -93,17 +93,17 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 	
 			for (int number = 0; number < mDataSize; ++number) {
 				if (number == 0) {
-					mData[number] = type(mt);
+					mData[number] = table_1(mt);
 				}
 				else {
 					if (mData[number - 1] == 0) {
-						mData[number] = mData[number - 1] + third_number(mt);
+						mData[number] = mData[number - 1] + table_3(mt);
 					}
 					else if (mData[number - 1] == 9) {
-						mData[number] = mData[number - 1] - third_number(mt);
+						mData[number] = mData[number - 1] - table_3(mt);
 					}
 					else
-						mData[number] = mData[number - 1] + second_number(mt) - 3;
+						mData[number] = mData[number - 1] + table_2(mt) - 3;
 
 				}
 
