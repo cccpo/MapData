@@ -18,13 +18,13 @@ int main() {
 
 	//cout << "Make Test Data" << endl;
 	//
-	//start = chrono::high_resolution_clock::now();
+	//start = chrono::high_resolution_clock::now();//計測開始
 
 	//test_data_maker.GenerateData(1000);//テストデータ生成
 	string ab = "resource/test1.log";
-	test_data_maker.GenerateTestDataCSV(ab, 1000);
+	test_data_maker.GenerateTestDataCSV(ab, 10000);
 
-	//end = chrono::high_resolution_clock::now();
+	//end = chrono::high_resolution_clock::now();//計測終了
 
 	//double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 
