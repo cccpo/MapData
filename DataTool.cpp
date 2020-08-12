@@ -8,6 +8,7 @@ DataTool::~DataTool() {
 
 }
 
+//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚Å•ªŠ„
 vector<string> DataTool::Split(string inWord, char inDeleteWord) {
     int first = 0;
     int last = inWord.find_first_of(inDeleteWord);

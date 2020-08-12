@@ -16,7 +16,10 @@ void DataInput:: LoadData(vector<string>& ioVectorDatas) {
 
 }
 
+//入力したファイルデータから
 vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
+	string file_path = "resource/" + inFileName;
+	
 	ifstream ifs(inFileName);
 	vector<string> player_route,player_id, player_route2;
 	vector<int> pls_in;

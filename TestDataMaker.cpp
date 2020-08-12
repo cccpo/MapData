@@ -83,8 +83,9 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 	uniform_int_distribution<int> table_2(2, 4);//2～4の範囲で乱数発生
 	uniform_int_distribution<int> table_3(0, 1);//0～1の範囲で乱数発生
 
+	string file_path = "resource/"+ inFileName;
 
-	ofstream test_csv_file(inFileName);//出力形式
+	ofstream test_csv_file(file_path);//出力形式
 	test_csv_file << "PlayerID" << "," << "PlayerCource" << endl;
 
 	for (int number = 0; number < inNumOfData; number++) {

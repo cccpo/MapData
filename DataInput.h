@@ -23,7 +23,7 @@ public:
 
 		void  LoadData(vector<string>& ioVectorDatas);
 
-		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);
+		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
 

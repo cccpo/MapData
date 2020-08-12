@@ -21,8 +21,9 @@ int main() {
 	//start = chrono::high_resolution_clock::now();//計測開始
 
 	//test_data_maker.GenerateData(1000);//テストデータ生成
-	string ab = "resource/test001.csv";
-	test_data_maker.GenerateTestDataCSV(ab, 10000);
+	
+	string file_name = "test21S.csv";
+	test_data_maker.GenerateTestDataCSV(file_name, 10000);
 
 	//end = chrono::high_resolution_clock::now();//計測終了
 
