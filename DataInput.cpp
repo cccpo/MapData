@@ -18,15 +18,13 @@ void DataInput:: LoadData(vector<string>& ioVectorDatas) {
 
 //入力したファイルデータから
 vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
-	string file_path = "resource/" + inFileName;
-	
 	ifstream ifs(inFileName);
 	vector<string> player_route,player_id, player_route2;
 	vector<int> pls_in;
 
 	if (!ifs)
 	{
-		cout << "Error"<< endl;
+		//cout << "Error"<< endl;
 	}
 
 	string tmp;
@@ -75,7 +73,7 @@ vector<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 	//データをリストに格納する
 	for (int i = 0; i < lisya.size(); i++) {
 		tesu_a = to_string(lisya[i]);
-		cout << tesu_a << endl;
+		//cout << tesu_a << endl;
 	}
 
 	return lisya;

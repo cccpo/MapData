@@ -5,6 +5,8 @@
 #include <vector>
 #include <array>
 
+#include "DataTool.h"
+
 using namespace std;
 
 class TestDataMaker
@@ -20,6 +22,8 @@ public:
 	const void GenerateTestDataCSV(string inFileName,int inNumOfData);//データのランダム生成(CSVファイルに書き込み)
 
 protected:
+	DataTool data_tool;
+
 	string mPlayerId;//PlayerID
 	array<int, 10> mData;
 	

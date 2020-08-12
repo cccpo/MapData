@@ -83,7 +83,7 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 	uniform_int_distribution<int> table_2(2, 4);//2`4‚Ì”ÍˆÍ‚Å—””­¶
 	uniform_int_distribution<int> table_3(0, 1);//0`1‚Ì”ÍˆÍ‚Å—””­¶
 
-	string file_path = "resource/"+ inFileName;
+	string file_path = data_tool.SetFilePath(inFileName);
 
 	ofstream test_csv_file(file_path);//o—ÍŒ`®
 	test_csv_file << "PlayerID" << "," << "PlayerCource" << endl;
