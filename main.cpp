@@ -13,15 +13,15 @@ int main() {
 	DataInput data_input;
 	TestDataMaker test_data_maker;
 	DataTool data_tool;
-	//
+	
 	//chrono::high_resolution_clock::time_point start, end;
 
-	//cout << "Make Test Data" << endl;
-	//
+	cout << "Make Test Data" << endl;
+	
 	//start = chrono::high_resolution_clock::now();//計測開始
 
 	//test_data_maker.GenerateData(1000);//テストデータ生成
-	string ab = "resource/test1.log";
+	string ab = "resource/test001.csv";
 	test_data_maker.GenerateTestDataCSV(ab, 10000);
 
 	//end = chrono::high_resolution_clock::now();//計測終了
@@ -45,11 +45,11 @@ int main() {
 	dala_si = data_input.GetFileData(a, data_list);
 
 	//dala_si = data_input.GetDataList();
-	cout << dala_si.size() << endl;
+	//cout << dala_si.size() << endl;
 
-	for (int i = 0; i < dala_si.size(); i++)
-		tesu_a = to_string(dala_si[i]);
-		cout << tesu_a << endl;
+	//for (int i = 0; i < dala_si.size(); i++)
+		//tesu_a = to_string(dala_si[i]);
+		//cout << tesu_a << endl;
 
 	return 0;
 }
