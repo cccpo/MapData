@@ -8,11 +8,6 @@ DataInput::~DataInput() {
 
 }
 
-//int DataInput::GetPlayerRoute() {
-//	return mPlayerRoute.size();
-//}
-
-
 //CSVデータを読み込み、格納する
 const void DataInput:: LoadCSVData(string& ioFile) {
 	ifstream ifs(ioFile);
@@ -106,10 +101,6 @@ vector<string> DataInput::SearchPlayerData(string inPlayerID) {
 			return mVectorDates.at(i);
 		}
 	}
-
-}
-
-void DataInput::SaveData() {
 
 }
 
