@@ -10,10 +10,6 @@
 
 using namespace std;
 
- static vector<int> gDataList;
- //static vector<vector<string>> gVectorDates(10001, vector<string>(11));
-
-
 class DataInput
 
 {
@@ -23,8 +19,6 @@ public:
 
 		vector<vector<string>> mVectorDates;
 
-		
-		inline vector<int> GetDataList() const { return gDataList;};
 		inline vector<string> GetPlayerCourseData(int inPlayerID) { return mVectorDates.at(inPlayerID); };
 		inline string GetPlayIDData (int inPlayerId, int num) { return mVectorDates.at(inPlayerId).at(num); };
 
@@ -39,13 +33,8 @@ public:
 		void SaveData();
 
 		bool IsExitPlayerID(string inPlayerID);
-
-		inline int GetPlayerID() {};
-		//int GetPlayerRoute();
 protected:
 	DataTool data_tool;
-
-	int n = 10;
 
 	string mPlayerId;//PlayerID
 	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };
