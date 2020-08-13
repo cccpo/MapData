@@ -25,6 +25,7 @@ public:
 
 		
 		inline vector<int> GetDataList() const { return gDataList;};
+		inline vector<string> GetPlayerCourseData(int inPlayerID) { return mVectorDates.at(inPlayerID); };
 		inline string GetPlayIDData (int inPlayerId, int num) { return mVectorDates.at(inPlayerId).at(num); };
 
 		void  LoadCSVData(string& ioVectorDatas);
@@ -32,6 +33,8 @@ public:
 		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
+		vector<string> SearchPlayerData(string inPlayerName);
+
 
 		void SaveData();
 
