@@ -11,6 +11,8 @@
 using namespace std;
 
  static vector<int> gDataList;
+ //static vector<vector<string>> gVectorDates(10001, vector<string>(11));
+
 
 class DataInput
 
@@ -19,7 +21,11 @@ public:
 		DataInput();
 		~DataInput();
 
+		vector<vector<string>> mVectorDates;
+
+		
 		inline vector<int> GetDataList() const { return gDataList;};
+		inline string GetPlayIDData (int inPlayerId, int num) { return mVectorDates.at(inPlayerId).at(num); };
 
 		void  LoadCSVData(string& ioVectorDatas);
 
@@ -39,12 +45,11 @@ protected:
 	string mPlayerId;//PlayerID
 	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };
 
-	//vector<string>& mVectorDates;
 	//vector<int> mDataList(*n);
 
 
 
-
+	
 	//vector<string> mDataList(string,11);
 	
 
