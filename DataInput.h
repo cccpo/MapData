@@ -28,15 +28,17 @@ public:
 		inline vector<string> GetPlayerCourseData(int inPlayerID) { return mVectorDates.at(inPlayerID); };
 		inline string GetPlayIDData (int inPlayerId, int num) { return mVectorDates.at(inPlayerId).at(num); };
 
-		void  LoadCSVData(string& ioVectorDatas);
+		void  LoadCSVData(string& ioVectorDatas);//CSVデータを読み込み、格納する
 
 		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
-		vector<string> SearchPlayerData(string inPlayerName);
+		vector<string> SearchPlayerData(string inPlayerID);
 
 
 		void SaveData();
+
+		bool IsExitPlayerID(string inPlayerID);
 
 		inline int GetPlayerID() {};
 		//int GetPlayerRoute();

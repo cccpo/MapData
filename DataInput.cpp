@@ -13,6 +13,7 @@ DataInput::~DataInput() {
 //}
 
 
+//CSVデータを読み込み、格納する
 void DataInput:: LoadCSVData(string& ioVectorDatas) {
 	string line;
 	int test_num = 0;
@@ -23,13 +24,14 @@ void DataInput:: LoadCSVData(string& ioVectorDatas) {
 	while (getline(ifs, line)) {
 		vector<string> strvec = data_tool.Split(line, ',');
 		
+		//データを格納
 		for (int i = 0; i < strvec.size(); i++) {
 			mVectorDates.at(test_num).at(i)= strvec.at(i);
 
-			cout << mVectorDates.at(test_num).at(i);
+			//cout << mVectorDates.at(test_num).at(i);
 		}
 
-		cout << endl;
+		//cout << endl;
 		test_num++;
 	}
 
@@ -100,6 +102,29 @@ vector<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 	return lisya;
 }
 
+vector<string> DataInput::SearchPlayerData(string inPlayerID) {
+
+	for (int i = 0; i < mVectorDates.size(); i++) {
+		if (mVectorDates.at(i).at(0) == inPlayerID) {
+			return mVectorDates.at(i);
+		}
+	}
+
+}
+
 void DataInput::SaveData() {
+
+}
+
+bool DataInput::IsExitPlayerID(string inPlayerID) {
+	for (int i = 0; i < mVectorDates.size(); i++) {
+		if (mVectorDates.at(i).at(0) == inPlayerID) {
+			
+			return true;
+		}
+	}
+
+	cout << "Can't find" << inPlayerID << endl;
+	return false;
 
 }
