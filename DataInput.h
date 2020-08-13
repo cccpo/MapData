@@ -21,7 +21,7 @@ public:
 
 		inline vector<int> GetDataList() const { return gDataList;};
 
-		void  LoadData(vector<string>& ioVectorDatas);
+		void  LoadCSVData(string& ioVectorDatas);
 
 		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
