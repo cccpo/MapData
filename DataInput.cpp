@@ -14,28 +14,25 @@ DataInput::~DataInput() {
 
 
 //CSVƒf[ƒ^‚ğ“Ç‚İ‚İAŠi”[‚·‚é
-void DataInput:: LoadCSVData(string& ioVectorDatas) {
+const void DataInput:: LoadCSVData(string& ioFile) {
+	ifstream ifs(ioFile);
 	string line;
-	int test_num = 0;
-	vector<vector<string>> csv_dates(10001, vector<string>(11));
+	int data_column = 0;
 
-	ifstream ifs(ioVectorDatas);
-
+	
 	while (getline(ifs, line)) {
-		vector<string> strvec = data_tool.Split(line, ',');
+		vector<string> data_set = data_tool.Split(line, ',');
 		
 		//ƒf[ƒ^‚ğŠi”[
-		for (int i = 0; i < strvec.size(); i++) {
-			mVectorDates.at(test_num).at(i)= strvec.at(i);
+		for (int data_row = 0; data_row < data_set.size(); data_row++) {
+			mVectorDates.at(data_column).at(data_row)= data_set.at(data_row);
 
-			//cout << mVectorDates.at(test_num).at(i);
+			//cout << mVectorDates.at(data_column).at(data_column);
 		}
 
 		//cout << endl;
-		test_num++;
+		data_column++;
 	}
-
-	//ifs.clear();
 	
 }
 

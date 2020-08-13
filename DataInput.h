@@ -28,7 +28,7 @@ public:
 		inline vector<string> GetPlayerCourseData(int inPlayerID) { return mVectorDates.at(inPlayerID); };
 		inline string GetPlayIDData (int inPlayerId, int num) { return mVectorDates.at(inPlayerId).at(num); };
 
-		void  LoadCSVData(string& ioVectorDatas);//CSVデータを読み込み、格納する
+		const void  LoadCSVData(string& ioFile);//CSVデータを読み込み、格納する
 
 		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
