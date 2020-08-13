@@ -8,30 +8,30 @@ DataTool::~DataTool() {
 
 }
 
-//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚Å•ªŠ„
+//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚²‚Æ‚É•ªŠ„
 vector<string> DataTool::Split(string& inLine, char inDeleteWord) {
-    unsigned __int32 first = 0;
-    unsigned __int32 last =  inLine.find_first_of(inDeleteWord);
+    unsigned __int32 line_first = 0;
+    unsigned __int32 line_last =  inLine.find_first_of(inDeleteWord);
     
     vector<string> result;
 
-    while (first < inLine.size()) {
-        string subStr(inLine, first, last - first);
+    while (line_first < inLine.size()) {
+        string subStr(inLine, line_first, line_last - line_first);
 
         result.emplace_back(subStr);
 
-        first = last + 1;
-        last = inLine.find_first_of(inDeleteWord, first);
+        line_first = line_last + 1;
+        line_last = inLine.find_first_of(inDeleteWord, line_first);
 
-        if (last == string::npos) {
-            last = inLine.size();
+        if (line_last == string::npos) {
+            line_last = inLine.size();
         }
     }
 
     return result;
 }
 
-bool DataTool::GetFileNames(std::string folderPath, std::vector<std::string>& file_names)
+bool DataTool::GetFileNames(string folderPath, vector<string>& file_names)
 {
     return true;
 }
