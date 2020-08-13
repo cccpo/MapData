@@ -1,6 +1,6 @@
 #include "DataInput.h"
 
-DataInput::DataInput() {
+DataInput::DataInput() :mVectorDates(10001, vector<string>(11)){
 	
 }
 
@@ -12,8 +12,29 @@ DataInput::~DataInput() {
 //	return mPlayerRoute.size();
 //}
 
-void DataInput:: LoadData(vector<string>& ioVectorDatas) {
 
+void DataInput:: LoadCSVData(string& ioVectorDatas) {
+	string line;
+	int test_num = 0;
+	vector<vector<string>> csv_dates(10001, vector<string>(11));
+
+	ifstream ifs(ioVectorDatas);
+
+	while (getline(ifs, line)) {
+		vector<string> strvec = data_tool.Split(line, ',');
+		
+		for (int i = 0; i < strvec.size(); i++) {
+			mVectorDates.at(test_num).at(i)= strvec.at(i);
+
+			cout << mVectorDates.at(test_num).at(i);
+		}
+
+		cout << endl;
+		test_num++;
+	}
+
+	//ifs.clear();
+	
 }
 
 //入力したファイルデータから
