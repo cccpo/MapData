@@ -17,7 +17,7 @@ public:
 
 	inline string const SetFilePath(string inFileName) { return "resource/"+inFileName;};
 
-	vector<string> Split(string str, char del);//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚Å•ªŠ„
+	vector<string> Split (string& inLine, char inDeleteWord);//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚Å•ªŠ„
 	bool GetFileNames(std::string folderPath, std::vector<std::string>& file_names);
 
 };
