@@ -29,23 +29,12 @@ public:
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
 		vector<string> SearchPlayerData(string inPlayerID);
 
-
-		void SaveData();
-
 		bool IsExitPlayerID(string inPlayerID);
 protected:
 	DataTool data_tool;
 
 	string mPlayerId;//PlayerID
 	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };
-
-	//vector<int> mDataList(*n);
-
-
-
-	
-	//vector<string> mDataList(string,11);
-	
 
 	vector<string> lsl;
 	
