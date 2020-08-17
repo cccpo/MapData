@@ -37,11 +37,11 @@ int main() {
 	}
 //End
 
-	//vector<string> data_list;
-	//vector<string> data_list2;
-	//vector<int> dala_si;
-	//string tesu_a;
-	//string player_name = "PlayerA";
+	vector<string> data_list;
+	vector<string> data_list2;
+	vector<int> dala_si;
+	string tesu_a;
+	string player_name = "PlayerA";
 
 //テストデータ読み込み
 	//#TODO 同一フォルダ内のデータをリストに追加する
@@ -54,9 +54,9 @@ int main() {
 	data_input.LoadCSVData(file_name);//CSVデータの読み込み
 	end = chrono::high_resolution_clock::now();//計測終了
 
-	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	cout << "Success" << endl;
-	cout << "Time:" << time << endl;
+	//double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	//cout << "Success" << endl;
+	//cout << "Time:" << time << endl;
 
 	//if (data_input.IsExitPlayerID(player_name)) {
 	//	data_list = data_input.SearchPlayerData(player_name);

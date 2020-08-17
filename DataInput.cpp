@@ -9,7 +9,9 @@ DataInput::~DataInput() {
 }
 
 //CSVデータを読み込み、格納する
-const void DataInput:: LoadCSVData(string& ioFile) {
+const void DataInput:: LoadCSVData(string ioFile) {
+	string file_path = data_tool.SetFilePath(ioFile);
+	
 	ifstream ifs(ioFile);
 	string line;
 	int data_column = 0;
@@ -22,10 +24,10 @@ const void DataInput:: LoadCSVData(string& ioFile) {
 		for (int data_row = 0; data_row < data_set.size(); data_row++) {
 			mVectorDates.at(data_column).at(data_row)= data_set.at(data_row);
 
-			//cout << mVectorDates.at(data_column).at(data_column);
+			cout << mVectorDates.at(data_column).at(data_row);
 		}
 
-		//cout << endl;
+		cout << endl;
 		data_column++;
 	}
 	
