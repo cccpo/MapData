@@ -7,17 +7,17 @@
 
 
 #include "DataTool.h"
+#include "DataSort.h"
 
 using namespace std;
 
 class DataInput
-
 {
 public:
 		DataInput();
 		~DataInput();
 
-		vector<vector<string>> mVectorDates;
+		vector<vector<string>> mVectorDates;//ÉfÅ[É^Çäiî[Ç∑ÇÈvector
 
 		inline vector<string> GetPlayerCourseData(const int& inPlayerID) { return mVectorDates.at(inPlayerID); };
 		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };
@@ -29,9 +29,12 @@ public:
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
 		vector<string> SearchPlayerData(string inPlayerID);
 
+		void Sort();
+
 		bool IsExitPlayerID(string inPlayerID);
 protected:
 	DataTool data_tool;
+	DataSort data_sort;
 
 	string mPlayerId;//PlayerID
 	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };

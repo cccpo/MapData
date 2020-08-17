@@ -119,3 +119,7 @@ bool DataInput::IsExitPlayerID(string inPlayerID) {
 	return false;
 
 }
+
+void DataInput::Sort() {
+	data_sort.NumOfSame(mVectorDates);
+}

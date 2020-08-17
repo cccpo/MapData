@@ -5,7 +5,7 @@
 #include "DataInput.h"
 #include "TestDataMaker.h"
 #include "DataTool.h"
-
+#include "DataSort.h"
 
 using namespace std;
 
@@ -15,6 +15,7 @@ int main() {
 	DataInput data_input;
 	TestDataMaker test_data_maker;
 	DataTool data_tool;
+	DataSort data_sort;
 
 
 	
@@ -59,6 +60,16 @@ int main() {
 
 	//data_list = data_input.SearchPlayerData(player_name);
 	//cout << data_input.GetPlayIDData(1, 1);
+
+	cout << data_input.mVectorDates.at(1).at(1) << endl;
+
+	data_input.Sort();
+
+	cout << data_sort.mSortVectorDates.size() << endl;
+	cout << data_sort.mSortVectorDates.at(0).size() << endl;
+	//cout << data_sort.mSortVectorDates.at(1).at(1) << endl;
+
+//格納したテストデータを確認する
 	//data_list = data_input.GetPlayerCourseData(1);
 	//
 	//for (int i = 0; i < data_list.size(); i++) {
