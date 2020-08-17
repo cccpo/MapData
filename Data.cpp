@@ -20,7 +20,7 @@ const void Data::LoadTestData(string& inFileName) {
 	cout << "Load Test Data" << endl;
 
 	mVectorDates = data_input.LoadCSVData(inFileName);
-
+	mSortVectorDates = data_sort.NumOfSame(mVectorDates);//プレイヤーネームの削除
 
 	cout << "Success" << endl;
 }

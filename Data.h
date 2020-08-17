@@ -19,6 +19,7 @@ public:
 	~Data();
 
 	vector<vector<string>> mVectorDates;
+	vector<vector<string>> mSortVectorDates;
 
 	const void GenerateTestData(string& inFileName);
 	const void LoadTestData(string& inFileName);

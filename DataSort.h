@@ -17,7 +17,7 @@ public:
 
 	vector<vector<string>> mSortVectorDates;//ƒf[ƒ^‚ğŠi”[‚·‚évector
 
-	void NumOfSame(vector<vector<string>> inKSA);
+	vector<vector<string>> NumOfSame(vector<vector<string>> inKSA);
 protected:
 	//DataInput data_input;
 };

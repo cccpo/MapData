@@ -8,7 +8,7 @@ DataSort::~DataSort() {
 
 }
 
-void DataSort::NumOfSame(vector<vector<string>> inKSA) {
+vector<vector<string>> DataSort::NumOfSame(vector<vector<string>> inKSA) {
 	mSortVectorDates = inKSA;
 
 	mSortVectorDates.erase(mSortVectorDates.begin());//1s–Ú‚ÌÁ‹‚¨‚æ‚‚—v‘f‚Ìíœ
@@ -30,4 +30,6 @@ void DataSort::NumOfSame(vector<vector<string>> inKSA) {
 
 	cout << mSortVectorDates.size() << endl;
 	cout << mSortVectorDates.at(0).size() << endl;
+
+	return mSortVectorDates;
 }
