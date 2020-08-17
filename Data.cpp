@@ -15,3 +15,12 @@ const void Data::GenerateTestData(string& inFileName) {
 
 	cout << "Success" << endl;
 }
+
+const void Data::LoadTestData(string& inFileName) {
+	cout << "Load Test Data" << endl;
+
+	data_input.LoadCSVData(inFileName);
+
+
+	cout << "Success" << endl;
+}
