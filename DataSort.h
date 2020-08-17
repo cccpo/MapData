@@ -17,7 +17,8 @@ public:
 
 	vector<vector<string>> mSortVectorDates;//ÉfÅ[É^Çäiî[Ç∑ÇÈvector
 
-	vector<vector<string>> NumOfSame(vector<vector<string>> inKSA);
+	vector<vector<string>> DeleteKeyCategory(vector<vector<string>> inDataList);
+	vector<vector<string>> ExtractData(vector<vector<string>> inDataList);
 protected:
 	//DataInput data_input;
 };
