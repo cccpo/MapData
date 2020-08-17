@@ -20,6 +20,7 @@ public:
 
 	vector<vector<string>> mVectorDates;
 	vector<vector<string>> mSortVectorDates;
+	vector<vector<string>> mPriorityDates;
 
 	const void GenerateTestData(string& inFileName);
 	const void LoadTestData(string& inFileName);

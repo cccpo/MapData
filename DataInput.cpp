@@ -123,5 +123,5 @@ bool DataInput::IsExitPlayerID(string inPlayerID) {
 }
 
 void DataInput::Sort() {
-	data_sort.NumOfSame(mVectorDates);
+	data_sort.DeleteKeyCategory(mVectorDates);
 }

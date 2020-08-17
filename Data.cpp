@@ -19,8 +19,11 @@ const void Data::GenerateTestData(string& inFileName) {
 const void Data::LoadTestData(string& inFileName) {
 	cout << "Load Test Data" << endl;
 
-	mVectorDates = data_input.LoadCSVData(inFileName);
-	mSortVectorDates = data_sort.NumOfSame(mVectorDates);//プレイヤーネームの削除
+	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出
+
+	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
+	mPriorityDates = data_sort.ExtractData(mSortVectorDates);
+
 
 	cout << "Success" << endl;
 }
