@@ -9,10 +9,10 @@ DataInput::~DataInput() {
 }
 
 //CSVデータを読み込み、格納する
-const void DataInput:: LoadCSVData(string& ioFile) {
+const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	string file_path = data_tool.SetFilePath(ioFile);
 	
-	ifstream input_file(ioFile);
+	ifstream input_file(file_path);
 	string line;
 	int data_column = 0;
 
@@ -32,6 +32,8 @@ const void DataInput:: LoadCSVData(string& ioFile) {
 	}
 	
 	//cout << data_column << endl;
+
+	return mVectorDates;
 }
 
 //入力したファイルデータから

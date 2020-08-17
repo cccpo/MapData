@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <array>
+#include <vector>
+#include <string>
 
 #include "DataInput.h"
 #include "TestDataMaker.h"
@@ -15,6 +17,8 @@ public:
 
 	Data();
 	~Data();
+
+	vector<vector<string>> mVectorDates;
 
 	const void GenerateTestData(string& inFileName);
 	const void LoadTestData(string& inFileName);

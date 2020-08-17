@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data() {
+Data::Data() :mVectorDates(10001, vector<string>(11)) {
 
 }
 
@@ -19,7 +19,7 @@ const void Data::GenerateTestData(string& inFileName) {
 const void Data::LoadTestData(string& inFileName) {
 	cout << "Load Test Data" << endl;
 
-	data_input.LoadCSVData(inFileName);
+	mVectorDates = data_input.LoadCSVData(inFileName);
 
 
 	cout << "Success" << endl;
