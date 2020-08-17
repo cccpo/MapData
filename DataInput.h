@@ -19,10 +19,10 @@ public:
 
 		vector<vector<string>> mVectorDates;
 
-		inline vector<string> GetPlayerCourseData(int inPlayerID) { return mVectorDates.at(inPlayerID); };
-		inline string GetPlayIDData (int inPlayerId, int num) { return mVectorDates.at(inPlayerId).at(num); };
+		inline vector<string> GetPlayerCourseData(const int& inPlayerID) { return mVectorDates.at(inPlayerID); };
+		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };
 
-		const void  LoadCSVData(string ioFile);//CSVデータを読み込み、格納する
+		const void  LoadCSVData(string& ioFile);//CSVデータを読み込み、格納する
 
 		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
