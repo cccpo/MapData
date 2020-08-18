@@ -41,21 +41,21 @@ void DataTool::MakeResultData(vector<vector<string>> inDataList,string inFileNam
 
     ofstream data_sort_result(file_path);//o—ÍŒ`®
 	for (int number = 0; number < inDataList.size(); number++) {
-		string test_number = to_string(number);
+		//string test_number = to_string(number);
 
 		//test_csv_file << "Player" << number << ",";
 
 
 		for (int column_number = 0; column_number < inDataList.at(number).size(); ++column_number) {
 				if (!inDataList.at(number).at(column_number).empty()&& inDataList.at(number).at(column_number) ==inDataList.at(number).back()) {
-					data_sort_result << inDataList.at(number).at(column_number) << endl;
-				}else {
 					data_sort_result << inDataList.at(number).at(column_number);
+				}else {
+					data_sort_result << inDataList.at(number).at(column_number) <<",";
 				}
 
 		}
 
-
+        data_sort_result << endl;
 
 	}
 

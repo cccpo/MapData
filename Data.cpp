@@ -27,6 +27,8 @@ const void Data::LoadTestData(string& inFileName) {
 	
 	mPriorityDates = data_sort.ExtractData(mSortVectorDates);
 
+	data_tool.MakeResultData(mPriorityDates,"AfterData.csv");
+
 
 	cout << "Success" << endl;
 }
