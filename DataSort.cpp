@@ -85,15 +85,15 @@ vector<vector<string>> DataSort::ExtractData(vector<vector<string>> inDataList) 
 
 
 				string number = to_string(count);
-				cout << "No." << data_column << "'s Pair: ";
+				//cout << "No." << data_column << "'s Pair: ";
 				
 				for (int l=0; l < pair_list.size(); ++l) {
 					//string s_pair = to_string(pair_list.at(l));
 					//result_list.at(result_list_column).emplace_back(to_string(l));//––”ö‚É“¯ˆê‚ÌƒvƒŒƒCƒ„[‚ð’Ç‰Á
-					cout << "No." << pair_list.at(l)<<" ";
+					//cout << "No." << pair_list.at(l)<<" ";
 				}
 			
-				cout << endl;
+				//cout << endl;
 		
 				//inDataList.erase(inDataList.begin() + i);
 				it = result_list.at(result_list_column).begin();//
@@ -113,14 +113,14 @@ vector<vector<string>> DataSort::ExtractData(vector<vector<string>> inDataList) 
 		++data_column;
 		count = 0;
 	}
-	cout <<"Pairs:" <<num_of_pairs << endl;
+	/*cout <<"Pairs:" <<num_of_pairs << endl;
 
-	cout << result_list.size() << endl;
+	cout << result_list.size() << endl;*/
 	//cout << result_list.at(0).size() << endl;
 
 	result_list.resize(num_of_pairs);
 
-	cout << result_list.size() << endl;
+	//cout << result_list.size() << endl;
 
 
 	//sort(result_list.begin(), result_list.end(), [](const vector<int>& alpha, const vector<int>& beta) {return alpha[0] < beta[0]; });
