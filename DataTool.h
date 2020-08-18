@@ -5,6 +5,7 @@
 #include <vector>
 #include <filesystem>
 #include <array>
+#include <fstream>
 
 using namespace std;
 
@@ -20,6 +21,8 @@ public:
 
 	vector<string> Split (string& inLine, char inDeleteWord);//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚²‚Æ‚É•ªŠ„
 	bool GetFileNames(string folderPath, vector<string>& file_names);
+
+	void MakeResultData(vector<vector<string>> inDataList, string inFileName);
 
 };
 
