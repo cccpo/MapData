@@ -77,8 +77,8 @@ vector<vector<string>> DataSort::ExtractData(vector<vector<string>> inDataList) 
 				
 			}
 		//}
-			//ペア数が~個以上であれば追加
-			if (count >= 1) {
+			//ペア数が~個以上であればファイルに追加
+			if (count >= 3) {
 
 				for (int j = 0; j < inDataList.at(data_column).size(); ++j)
 					result_list.at(result_list_column).at(j) = inDataList.at(data_column).at(j);
@@ -99,20 +99,29 @@ vector<vector<string>> DataSort::ExtractData(vector<vector<string>> inDataList) 
 				it = result_list.at(result_list_column).begin();//
 				it = result_list.at(result_list_column).insert(it, to_string(count));
 				
+				//cout << result_list.at(data_column).size() << endl;
+				result_list.at(data_column).resize(11);
+				//cout << result_list.at(data_column).size() << endl;
+
 				
-				
-				pair_list.clear();
 				++num_of_pairs;
 				++result_list_column;//CSVファイルの改行
-				count = 0;
-			}else {
-				//cout << "[CODE:F]Nothing" << endl;
+				
 			}
 
-		
+		pair_list.clear();//ペアリストのクリア
 		++data_column;
+		count = 0;
 	}
-	cout <<"Pairs:" <<num_of_pairs << endl;;
+	cout <<"Pairs:" <<num_of_pairs << endl;
+
+	cout << result_list.size() << endl;
+	//cout << result_list.at(0).size() << endl;
+
+	result_list.resize(num_of_pairs);
+
+	cout << result_list.size() << endl;
+
 
 	//sort(result_list.begin(), result_list.end(), [](const vector<int>& alpha, const vector<int>& beta) {return alpha[0] < beta[0]; });
 
