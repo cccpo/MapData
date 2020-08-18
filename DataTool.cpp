@@ -40,6 +40,8 @@ void DataTool::MakeResultData(vector<vector<string>> inDataList,string inFileNam
     string file_path = SetFilePath(inFileName);
 
     ofstream data_sort_result(file_path);//èoóÕå`éÆ
+    data_sort_result << "Num" << "," << "Cource" << endl;
+
 	for (int number = 0; number < inDataList.size(); number++) {
 		//string test_number = to_string(number);
 
@@ -61,4 +63,15 @@ void DataTool::MakeResultData(vector<vector<string>> inDataList,string inFileNam
 
 
     data_sort_result.close();
+}
+
+bool DataTool::IsFindVec(vector<int> inVector, int inNumber) {
+    auto itr = find(inVector.begin(), inVector.end(), inNumber);
+    size_t index = distance(inVector.begin(), itr);
+   
+    if (index != inVector.size()) {
+        return true;
+    }else {
+        return false;
+    }
 }

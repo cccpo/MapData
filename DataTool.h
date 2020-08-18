@@ -19,7 +19,7 @@ public:
 
 	inline string const SetFilePath(string inFileName) { return "resource/"+inFileName;};
 
-	int FindVector(vector<int> inVector, int inNumber);
+	bool IsFindVec(vector<int> inVector, int inNumber);
 	vector<string> Split (string& inLine, char inDeleteWord);//‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚²‚Æ‚É•ªŠ„
 	bool GetFileNames(string folderPath, vector<string>& file_names);
 
