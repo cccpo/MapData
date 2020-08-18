@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 
+#include "DataTool.h"
 
 using namespace std;
 
@@ -15,11 +16,14 @@ public:
 	DataSort();
 	~DataSort();
 
+
+
 	vector<vector<string>> mSortVectorDates;//ÉfÅ[É^Çäiî[Ç∑ÇÈvector
 
 	vector<vector<string>> DeleteKeyCategory(vector<vector<string>> inDataList);
 	vector<vector<string>> ExtractData(vector<vector<string>> inDataList);
 protected:
 	//DataInput data_input;
+	DataTool data_tool;
 };
 
