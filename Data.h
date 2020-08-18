@@ -6,7 +6,6 @@
 
 #include "DataInput.h"
 #include "TestDataMaker.h"
-#include "DataTool.h"
 #include "DataSort.h"
 
 using namespace std;
@@ -22,13 +21,12 @@ public:
 	vector<vector<string>> mSortVectorDates;
 	vector<vector<string>> mPriorityDates;
 
-	const void GenerateTestData(string& inFileName);
-	const void LoadTestData(string& inFileName);
+	const void GenerateTestData(string& inFileName);//テストデータ生成実行関数
+	const void LoadTestData(string& inFileName);//CSVデータ読取実行関数
 
 protected:
 	DataInput data_input;
 	TestDataMaker test_data_maker;
-	DataTool data_tool;
 	DataSort data_sort;
 
 };

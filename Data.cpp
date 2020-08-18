@@ -8,6 +8,7 @@ Data::~Data() {
 
 }
 
+//テストデータ生成実行関数
 const void Data::GenerateTestData(string& inFileName) {
 	cout << "Make Test Data" << endl;
 
@@ -16,12 +17,14 @@ const void Data::GenerateTestData(string& inFileName) {
 	cout << "Success" << endl;
 }
 
+//CSVデータ読取実行関数
 const void Data::LoadTestData(string& inFileName) {
 	cout << "Load Test Data" << endl;
 
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出
 
 	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
+	
 	mPriorityDates = data_sort.ExtractData(mSortVectorDates);
 
 
