@@ -23,7 +23,7 @@ int main() {
 	
 	chrono::high_resolution_clock::time_point start, end;
 
-	string file_name = "testdata11000.csv";
+	string file_name = "BeforeData.csv";
 	//string file_path = data_tool.SetFilePath("testdata110.csv");
 
 	//start = chrono::high_resolution_clock::now();//Œv‘ªŠJŽn
@@ -53,7 +53,7 @@ int main() {
 	//data_list = data_input.SearchPlayerData(player_name);
 	//cout << data_input.GetPlayIDData(1, 1);
 
-	cout << data.mVectorDates.at(0).at(1) << endl;
+	//cout << data.mVectorDates.at(0).at(1) << endl;
 
 	//data_input.Sort();
 
