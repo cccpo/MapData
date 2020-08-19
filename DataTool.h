@@ -18,14 +18,14 @@ public:
 	~DataTool();
 
 	//ファイルの保存先をresourceフォルダ直下にする関数
-	inline string const SetFilePath(string inFileName) { return "resource/"+inFileName;};
+	inline string const SetFilePath(string& inFileName) { return "resource/"+inFileName;};
 
-	vector<string> Split(string& inLine, char inDeleteWord);//対象の文字列から指定した文字ごとに分割
+	const vector<string> Split(string& inLine, char inDeleteWord);//対象の文字列から指定した文字ごとに分割
 
-	bool IsFindVec(vector<int> inVector, int inNumber);
-	bool GetFileNames(string folderPath, vector<string>& file_names);
+	const bool IsExitNumber(vector<int>& inVector, int& inNumber);
+	bool GetFileNames(string inFolderPath, vector<string>& inFileName);
 
-	void MakeResultData(vector<vector<string>> inDataList, string inFileName);
+	void MakeResultData(vector<vector<string>>& inDataList, string inFileName);
 
 };
 
