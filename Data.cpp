@@ -31,7 +31,9 @@ const void Data::LoadTestData(string& inFileName) {
 	mPriorityDates = data_sort.ExtractData(mSortVectorDates);
 	//vector<vector<string>>().swap(mSortVectorDates);
 	
-	data_tool.MakeResultData(mPriorityDates,"AfterData.csv");
+	string output_file_name = "AfterData.csv";
+	
+	data_tool.MakeResultData(mPriorityDates, output_file_name);
 	//vector<vector<string>>().swap(mPriorityDates);
 
 

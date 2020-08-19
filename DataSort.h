@@ -16,9 +16,9 @@ public:
 	DataSort();
 	~DataSort();
 
-	vector<vector<string>> mSortVectorDates;//データを格納するvector
+	//vector<vector<string>> mSortVectorDates;//データを格納するvector
 
-	vector<vector<string>> DeleteKeyCategory(vector<vector<string>> inDataList);
+	vector<vector<string>> DeleteKeyCategory(vector<vector<string>>& inDataList);
 	vector<vector<string>> ExtractData(vector<vector<string>> inDataList);
 protected:
 	DataTool data_tool;
