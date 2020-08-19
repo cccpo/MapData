@@ -1,6 +1,6 @@
 #include "DataSort.h"
 
-DataSort::DataSort():mSortVectorDates(10001, vector<string>(11)) {
+DataSort::DataSort() {
 
 }
 
@@ -8,25 +8,25 @@ DataSort::~DataSort() {
 
 }
 
-vector<vector<string>> DataSort::DeleteKeyCategory(vector<vector<string>> inDataList) {
+vector<vector<string>> DataSort::DeleteKeyCategory(vector<vector<string>>& inDataList) {
+	vector<vector<string>> mSortVectorDates;//データを格納するvector
+
+	
 	mSortVectorDates = inDataList;
 
 	mSortVectorDates.erase(mSortVectorDates.begin());//1行目の消去,要素の削除
 	
-
-	 //cout << mSortVectorDates.at(0).at(0);
-
 	 //プレイヤーネームを削除
 	for(int  data_column = 0; data_column < mSortVectorDates.size(); ++data_column){
 		mSortVectorDates.at(data_column).erase(mSortVectorDates.at(data_column).begin());
 	}
 
-	for (int data_column = 0; data_column < mSortVectorDates.size(); ++data_column) {
-		for (int data_row = 0; data_row < mSortVectorDates.at(data_column).size(); ++data_row) {
-			//cout << mSortVectorDates.at(data_column).at(data_row);
-		}
-	//cout << endl;
-	}
+	//for (int data_column = 0; data_column < mSortVectorDates.size(); ++data_column) {
+	//	for (int data_row = 0; data_row < mSortVectorDates.at(data_column).size(); ++data_row) {
+	//		//cout << mSortVectorDates.at(data_column).at(data_row);
+	//	}
+	////cout << endl;
+	//}
 
 	/*cout << mSortVectorDates.size() << endl;
 	cout << mSortVectorDates.at(0).size() << endl;*/
@@ -54,7 +54,7 @@ vector<vector<string>> DataSort::ExtractData(vector<vector<string>> inDataList) 
 			for (int i = 0; i < inDataList.size(); ++i) {
 				//合致する経路があれば抽出する
 				if (inDataList.at(data_column) == inDataList.at(i) && data_column != i &&
-					!data_tool.IsFindVec(except_number_list, data_column)) {
+					!data_tool.IsExitNumber(except_number_list, data_column)) {
 
 					pair_list.push_back(to_string(i));
 					except_number_list.push_back(i);
