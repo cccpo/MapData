@@ -110,6 +110,7 @@ vector<vector<string>> DataSort::ExtractData(vector<vector<string>> inDataList) 
 			}
 
 		pair_list.clear();//ペアリストのクリア
+		//vector<string>().swap(pair_list);
 		++data_column;
 		count = 0;
 	}

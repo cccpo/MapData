@@ -11,6 +11,7 @@
 
 using namespace std;
 
+//抽出したデータを格納、各クラスへ命令を出すクラス
 class Data
 {
 public:

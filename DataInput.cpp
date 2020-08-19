@@ -8,7 +8,7 @@ DataInput::~DataInput() {
 
 }
 
-//CSVデータを読み込み、格納する
+//CSVデータを読み込む関数
 const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	string file_path = data_tool.SetFilePath(ioFile);
 	
@@ -16,7 +16,7 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	string line;
 	int data_column = 0;
 
-	
+	//全行読み込む
 	while (getline(input_file, line)) {
 		vector<string> data_set = data_tool.Split(line, ',');
 		
