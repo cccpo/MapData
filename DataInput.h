@@ -36,12 +36,5 @@ protected:
 	DataTool data_tool;
 	DataSort data_sort;
 
-	string mPlayerId;//PlayerID
-	array<int, 10> mData{ 1,2,3,4,5,6,7,8,9,10 };
-
-	int n = 10;
-
-	vector<string> lsl;
-	
 };
 

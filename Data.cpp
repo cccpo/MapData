@@ -27,13 +27,12 @@ const void Data::LoadTestData(string& inFileName) {
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出
 
 	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
-	vector<vector<string>>().swap(mSortVectorDates);
-
 	
 	mPriorityDates = data_sort.ExtractData(mSortVectorDates);
+	//vector<vector<string>>().swap(mSortVectorDates);
 	
 	data_tool.MakeResultData(mPriorityDates,"AfterData.csv");
-	vector<vector<string>>().swap(mPriorityDates);
+	//vector<vector<string>>().swap(mPriorityDates);
 
 
 	cout << "Success" << endl;

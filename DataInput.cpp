@@ -28,7 +28,7 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 		}
 
 		//cout << endl;
-		data_column++;
+		++data_column;
 	}
 	
 	//cout << data_column << endl;
