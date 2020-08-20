@@ -31,34 +31,40 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 	vector<int> except_number_list;
 	vector<string>::iterator it;
 
-
-	int count = 0;
+	int i_count=0;
+	int pair_count = 0;
 	int result_list_column=0;
 	int num_of_pairs = 0;
 
-	int data_column = 4;
+	int data_column = 0;
 
-	while (data_column< inDataList.size()) {
-	
-			for (int i = 0; i < inDataList.size(); ++i) {
-				//合致する経路があれば抽出する
-				if (inDataList.at(data_column) == inDataList.at(i) && data_column != i &&
-					!data_tool.IsExitNumber(except_number_list, data_column)) {
+	//データの行数分回す
+	while (data_column < inDataList.size()) {
 
-					pair_list.emplace_back(to_string(i));
-					except_number_list.push_back(i);
-					++count;
+		if (!data_tool.IsExitNumber(except_number_list, data_column)) {
+			while ((data_column + 1) + i_count < inDataList.size()) {
+				//for (int i = 0; i < inDataList.size(); ++i) {
+					//合致する経路があれば抽出する
+
+				if (inDataList.at(data_column) == inDataList.at((data_column + 1) + i_count)) {
+
+					pair_list.emplace_back(to_string((data_column + 1) + i_count));
+					except_number_list.push_back((data_column + 1) + i_count);
+					++pair_count;
 				}
-			}
+
+			++i_count;
+		}
+	}
 		
 			//ペア数が~個以上であればファイルに追加
-			if (count >= 3) {
+			if (pair_count >= 3) {
 
 				for (int j = 0; j < inDataList.at(data_column).size(); ++j)
 					result_list.at(result_list_column).at(j) = inDataList.at(data_column).at(j);
 
 
-				string number = to_string(count);
+				string number = to_string(pair_count);
 				//cout << "No." << data_column << "'s Pair: ";
 				
 				//for (int l=0; l < pair_list.size(); ++l) {
@@ -71,7 +77,7 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 		
 				//inDataList.erase(inDataList.begin() + i);
 				it = result_list.at(result_list_column).begin();//
-				it = result_list.at(result_list_column).insert(it, to_string(count));
+				it = result_list.at(result_list_column).insert(it, to_string(pair_count));
 				
 				//cout << result_list.at(data_column).size() << endl;
 				result_list.at(data_column).resize(11);
@@ -86,7 +92,8 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 		pair_list.clear();//ペアリストのクリア
 		//vector<string>().swap(pair_list);
 		++data_column;
-		count = 0;
+		i_count = 0;
+		pair_count = 0;
 	}
 	/*cout <<"Pairs:" <<num_of_pairs << endl;
 
