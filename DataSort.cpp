@@ -39,29 +39,26 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 	int data_column = 0;
 
 	//データの行数分回す
-	while (data_column < inDataList.size()) {
-
+	while (data_column < inDataList.size()){
+		//除外リストに含まれていない場合処理を行う
 		if (!data_tool.IsExitNumber(except_number_list, data_column)) {
 			while ((data_column + 1) + i_count < inDataList.size()) {
-				//for (int i = 0; i < inDataList.size(); ++i) {
-					//合致する経路があれば抽出する
-
+				//合致する経路があれば抽出する
 				if (inDataList.at(data_column) == inDataList.at((data_column + 1) + i_count)) {
-
-					pair_list.emplace_back(to_string((data_column + 1) + i_count));
-					except_number_list.push_back((data_column + 1) + i_count);
+					pair_list.emplace_back(to_string((data_column + 1) + i_count));//ペアリストに追加
+					except_number_list.push_back((data_column + 1) + i_count);//除外リストに追加
 					++pair_count;
 				}
 
-			++i_count;
+				++i_count;
+			}
 		}
-	}
 		
 			//ペア数が~個以上であればファイルに追加
-			if (pair_count >= 3) {
+		if (pair_count >= 3) {
 
-				for (int j = 0; j < inDataList.at(data_column).size(); ++j)
-					result_list.at(result_list_column).at(j) = inDataList.at(data_column).at(j);
+			for (int j = 0; j < inDataList.at(data_column).size(); ++j)
+				result_list.at(result_list_column).at(j) = inDataList.at(data_column).at(j);
 
 
 				string number = to_string(pair_count);
@@ -87,7 +84,7 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 				++num_of_pairs;
 				++result_list_column;//CSVファイルの改行
 				
-			}
+		}
 
 		pair_list.clear();//ペアリストのクリア
 		//vector<string>().swap(pair_list);
@@ -101,9 +98,6 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 	//cout << result_list.at(0).size() << endl;
 
 	result_list.resize(num_of_pairs);
-
-	//cout << result_list.size() << endl;
-	//sort(result_list.begin(), result_list.end(), [](const vector<int>& alpha, const vector<int>& beta) {return alpha[0] < beta[0]; });
 
 	return result_list;
 }
