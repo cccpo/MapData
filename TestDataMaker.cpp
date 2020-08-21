@@ -77,6 +77,8 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 //inFileName ファイル名
 //inNumOfData データ数
 const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData) {
+	array<int, 10> player_location_datas;
+	
 	random_device rnd;
 	mt19937 mt(rnd());
 	uniform_int_distribution<int> table_1(0, 9);//0～9の範囲で乱数発生
@@ -96,18 +98,18 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 	
 		for (int column_number = 0; column_number < mDataSize; ++column_number) {
 			if (column_number == 0) {
-				mData[column_number] = table_1(mt);
+				player_location_datas[column_number] = table_1(mt);
 			}else {
-				if (mData[column_number - 1] == 0) {
-					mData[column_number] = mData[column_number - 1] + table_3(mt);
-				}else if (mData[column_number - 1] == 9) {
-					mData[column_number] = mData[column_number - 1] - table_3(mt);
+				if (player_location_datas[column_number - 1] == 0) {
+					player_location_datas[column_number] = player_location_datas[column_number - 1] + table_3(mt);
+				}else if (player_location_datas[column_number - 1] == 9) {
+					player_location_datas[column_number] = player_location_datas[column_number - 1] - table_3(mt);
 				}else {
-					mData[column_number] = mData[column_number - 1] + table_2(mt) - 3;
+					player_location_datas[column_number] = player_location_datas[column_number - 1] + table_2(mt) - 3;
 				}
 			}
 
-		test_csv_file << "{" << column_number << "." << mData[column_number] << "},";
+		test_csv_file << "{" << column_number << "." << player_location_datas[column_number] << "},";
 				
 		}
 

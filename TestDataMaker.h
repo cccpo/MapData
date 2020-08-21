@@ -13,7 +13,7 @@ using namespace std;
 class TestDataMaker
 {
 public:
-	const int mDataSize = 10;
+	const int mDataSize = 10;//プレイヤーの持つ10箇所の位置情報
 	
 	TestDataMaker();
 	~TestDataMaker();
