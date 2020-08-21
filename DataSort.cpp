@@ -25,7 +25,7 @@ const vector<vector<string>> DataSort::DeleteKeyCategory(vector<vector<string>>&
 
 //データの抽出を行う
 const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDataList) {
-	vector<vector<string>> result_list(10000, vector<string>(11));
+	vector<vector<string>> result_list(10000, vector<string>(10));
 	vector<string> pair_list;
 	
 	vector<int> except_number_list;
@@ -38,7 +38,11 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 
 	int data_column = 0;
 
-	//cout << inDataList.at(1).size();
+	//cout << inDataList.size() << endl;
+	//cout << inDataList.at(1).size() << endl;
+
+	//cout << result_list.size() << endl;
+	//cout << result_list.at(1).size() << endl;
 
 	//データの行数分回す
 	while (data_column < inDataList.size()){
@@ -48,7 +52,7 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 				//合致する経路があれば抽出する
 				if (inDataList.at(data_column) == inDataList.at((data_column + 1) + i_count)) {
 					pair_list.emplace_back(to_string((data_column + 1) + i_count));//ペアリストに追加
-					except_number_list.push_back((data_column + 1) + i_count);//除外リストに追加
+					except_number_list.emplace_back((data_column + 1) + i_count);//除外リストに追加
 					++pair_count;
 				}
 
@@ -101,7 +105,10 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 	cout << result_list.size() << endl;*/
 	//cout << result_list.at(0).size() << endl;
 
-	result_list.resize(num_of_pairs);
+	result_list.resize(num_of_pairs);//ペア数分の行数にリサイズ
+
+	cout << result_list.size() << endl;
+	cout << result_list.at(1).size() << endl;
 
 	return result_list;
 }
