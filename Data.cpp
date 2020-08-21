@@ -6,9 +6,6 @@ Data::Data() :mVectorDates(10001, vector<string>(11)) {
 
 Data::~Data() {
 
-
-	//mSortVectorDates.clear();
-	//mPriorityDates.clear();
 }
 
 //テストデータ生成実行関数

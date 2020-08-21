@@ -94,21 +94,13 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 				
 		}
 
-		pair_list.clear();//ペアリストのクリア
-		//vector<string>().swap(pair_list);
+		//pair_list.clear();//ペアリストのクリア
+		vector<string>().shrink_to_fit();
 		++data_column;
 		i_count = 0;
 		pair_count = 0;
 	}
-	/*cout <<"Pairs:" <<num_of_pairs << endl;
-
-	cout << result_list.size() << endl;*/
-	//cout << result_list.at(0).size() << endl;
-
 	result_list.resize(num_of_pairs);//ペア数分の行数にリサイズ
-
-	cout << result_list.size() << endl;
-	cout << result_list.at(1).size() << endl;
 
 	return result_list;
 }
