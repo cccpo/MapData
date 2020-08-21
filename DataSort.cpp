@@ -25,7 +25,7 @@ const vector<vector<string>> DataSort::DeleteKeyCategory(vector<vector<string>>&
 
 //データの抽出を行う
 const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDataList) {
-	vector<vector<string>> result_list(10001, vector<string>(12));
+	vector<vector<string>> result_list(10000, vector<string>(11));
 	vector<string> pair_list;
 	
 	vector<int> except_number_list;
@@ -37,6 +37,8 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 	int num_of_pairs = 0;
 
 	int data_column = 0;
+
+	//cout << inDataList.at(1).size();
 
 	//データの行数分回す
 	while (data_column < inDataList.size()){
@@ -73,11 +75,13 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 				//cout << endl;
 		
 				//inDataList.erase(inDataList.begin() + i);
+				//result_list.at(result_list_column).emplace_back(to_string(pair_count));
+
 				it = result_list.at(result_list_column).begin();//
 				it = result_list.at(result_list_column).insert(it, to_string(pair_count));
 				
 				//cout << result_list.at(data_column).size() << endl;
-				result_list.at(data_column).resize(11);
+				//result_list.at(data_column).resize(11);
 				//cout << result_list.at(data_column).size() << endl;
 
 				

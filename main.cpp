@@ -15,7 +15,7 @@ int main() {
 
 	chrono::high_resolution_clock::time_point start, end;
 
-	string file_name = "BeforeData.csv";
+	string file_name = "BeforeData.csv";//読み込む対象
 
 	//start = chrono::high_resolution_clock::now();//計測開始
 	//data.GenerateTestData(file_name);//テストデータ生成実行関数
@@ -38,12 +38,6 @@ int main() {
 	cout << "Time:" << time << endl;
 
 //格納したテストデータを確認する
-	//data_list = data_input.GetPlayerCourseData(1);
-	//
-	//for (int i = 0; i < data_list.size(); i++) {
-	//	tesu_a = to_string(dala_si[i]);
-	//	cout << data_list.at(i) << endl;
-	//}
 
 	return 0;
 }
