@@ -47,7 +47,7 @@ const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
     }
 }
 
-void DataTool::MakeResultData(vector<vector<string>>& inDataList, string inFileName) {
+const void DataTool::MakeResultData(vector<vector<string>>& inDataList, string inFileName) {
     string file_path = SetFilePath(inFileName);
 
     ofstream data_sort_result(file_path);//èoóÕå`éÆ
