@@ -34,7 +34,7 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 	int i_count=0;
 	int pair_count = 0;
 	int result_list_column=0;
-	int num_of_pairs = 0;
+	int num_of_pairs = 0;//複数人使用した経路数をカウントする
 
 	int data_column = 0;
 
@@ -94,7 +94,6 @@ const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDat
 				
 		}
 
-		//pair_list.clear();//ペアリストのクリア
 		vector<string>().shrink_to_fit();
 		++data_column;
 		i_count = 0;
