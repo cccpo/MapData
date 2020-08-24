@@ -26,14 +26,14 @@ const vector<vector<string>> DataSort::DeleteKeyCategory(vector<vector<string>>&
 //データの抽出を行う
 const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDataList) {
 	vector<vector<string>> result_list(10000, vector<string>(10));
-	vector<string> pair_list;
+	vector<string> pair_list;//組み合わせが見つかった経路を格納する
 	
 	vector<int> except_number_list;
 	vector<string>::iterator it;
 
 	int i_count=0;
-	int pair_count = 0;
-	int result_list_column=0;
+	int pair_count = 0;//ペア数をカウントする
+	int result_list_column=0;//CSVファイルの何行目にデータをカウントするのかを示す
 	int num_of_pairs = 0;//複数人使用した経路数をカウントする
 
 	int data_column = 0;
