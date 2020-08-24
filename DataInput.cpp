@@ -109,10 +109,11 @@ vector<string> DataInput::SearchPlayerData(string inPlayerID) {
 
 }
 
+//引数としたプレイヤーネームが存在するかを検索するシステム
 bool DataInput::IsExitPlayerID(string inPlayerID) {
 	for (int i = 0; i < mVectorDates.size(); i++) {
 		if (mVectorDates.at(i).at(0) == inPlayerID) {
-			
+			cout << "Find" << endl;
 			return true;
 		}
 	}
