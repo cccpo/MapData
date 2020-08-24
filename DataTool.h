@@ -17,13 +17,14 @@ public:
 	DataTool();
 	~DataTool();
 
-	//ファイルの保存先をresourceフォルダ直下にする関数
-	inline string const SetFilePath(string& inFileName) { return "resource/"+inFileName;};
 
 	const vector<string> Split(string& inLine, char inDeleteWord);//対象の文字列から指定した文字ごとに分割
 
-	const bool IsExitNumber(vector<int>& inVector, int& inNumber);
+	//ファイルの保存先をresourceフォルダ直下にする関数
+	inline string const SetFilePath(string& inFileName) { return "resource/"+inFileName;};
+
 	bool GetFileNames(string inFolderPath, vector<string>& inFileName);
+	const bool IsExitNumber(vector<int>& inVector, int& inNumber);
 
 	const void MakeResultData(vector<vector<string>>& inDataList, string inFileName);
 

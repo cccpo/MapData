@@ -57,11 +57,9 @@ const void DataTool::MakeResultData(vector<vector<string>>& inDataList, string i
         for (int column_number = 0; column_number < inDataList.at(number).size(); ++column_number) {
             if (!inDataList.at(number).at(column_number).empty() && inDataList.at(number).at(column_number) == inDataList.at(number).back()) {
                 data_sort_result << inDataList.at(number).at(column_number);
-            }
-            else {
+            }else {
                 data_sort_result << inDataList.at(number).at(column_number) << ",";
             }
-
         }
 
         data_sort_result << endl;
