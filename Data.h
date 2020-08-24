@@ -3,6 +3,7 @@
 #include <array>
 #include <vector>
 #include <string>
+#include <map>
 
 #include "DataInput.h"
 #include "TestDataMaker.h"
@@ -18,6 +19,8 @@ public:
 
 	Data();
 	~Data();
+
+	map<string, vector<vector<string>>> user_datas;
 
 	vector<vector<string>> mVectorDates;
 	vector<vector<string>> mSortVectorDates;
