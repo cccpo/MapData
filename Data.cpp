@@ -38,3 +38,7 @@ const void Data::LoadTestData(string& inFileName) {
 	data_tool.MakeResultData(mPriorityDates, output_file_name);
 
 }
+
+const void Data::ExtractPlayerCourceData(vector<vector<string>> inDate) {
+
+}
