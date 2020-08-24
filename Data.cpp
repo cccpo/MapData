@@ -27,11 +27,7 @@ const void Data::LoadTestData(string& inFileName) {
 
 	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
 	
-	cout << "Extract Data..." << endl;
-
-	mPriorityDates = data_sort.ExtractData(mSortVectorDates);
-
-	cout << "Data Extraction Completed" << endl;
+	ExtractPlayerCourceData(mSortVectorDates);
 
 	string output_file_name = "AfterData2.csv";
 	
@@ -39,6 +35,10 @@ const void Data::LoadTestData(string& inFileName) {
 
 }
 
-const void Data::ExtractPlayerCourceData(vector<vector<string>> inDate) {
+const void Data::ExtractPlayerCourceData(vector<vector<string>>& inDate) {
+	cout << "Extract Data..." << endl;
 
+	mPriorityDates = data_sort.ExtractData(inDate);
+
+	cout << "Data Extraction Completed" << endl;
 }

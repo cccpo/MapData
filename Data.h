@@ -25,7 +25,7 @@ public:
 
 	const void GenerateTestData(string& inFileName);//テストデータ生成実行関数
 	const void LoadTestData(string& inFileName);//CSVデータ読取実行関数
-	const void ExtractPlayerCourceData(vector<vector<string>> inDate);
+	const void ExtractPlayerCourceData(vector<vector<string>>& inDate);
 
 protected:
 	DataInput data_input;
