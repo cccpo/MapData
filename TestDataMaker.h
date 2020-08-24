@@ -10,6 +10,7 @@
 
 using namespace std;
 
+//テストデータを生成するクラス
 class TestDataMaker
 {
 public:
