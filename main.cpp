@@ -1,5 +1,4 @@
 #include <iostream>
-#include <array>
 #include <chrono>
 
 
@@ -24,12 +23,12 @@ int main() {
 	//cout << "Time:" << time << endl;
 
 //テストデータ読み込みと生成まで
-	start = chrono::high_resolution_clock::now();//計測開始
+	//start = chrono::high_resolution_clock::now();//計測開始
 	data.LoadTestData(file_name);//CSVデータの読み込み実行関数
-	end = chrono::high_resolution_clock::now();//計測終了
+	//end = chrono::high_resolution_clock::now();//計測終了
 
-	//double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	//cout << "Time:" << time << endl;
+	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	cout << "Time:" << time << endl;
 
 //格納したテストデータを確認する
 

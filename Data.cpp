@@ -19,19 +19,28 @@ const void Data::GenerateTestData(string& inFileName) {
 
 //CSVデータ読取実行関数
 const void Data::LoadTestData(string& inFileName) {
+	chrono::high_resolution_clock::time_point start, end;
+	
 	cout << "Load Data..." << endl;
 
+	start = chrono::high_resolution_clock::now();//計測開始
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出し、メンバ変数に格納
+	
+	//cout <<mVectorDates.size()<<endl;
+	end = chrono::high_resolution_clock::now();//計測終了
+
+	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	cout << "Time:" << time << endl;
 
 	cout << "Loading Completed" << endl;
 
 	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
 	
-	ExtractPlayerCourceData(mSortVectorDates);
+	//ExtractPlayerCourceData(mSortVectorDates);
 
-	string output_file_name = "AfterData2.csv";
+	/*string output_file_name = "AfterData2.csv";
 	
-	data_tool.MakeResultData(mPriorityDates, output_file_name);
+	data_tool.MakeResultData(mPriorityDates, output_file_name);*/
 
 }
 
