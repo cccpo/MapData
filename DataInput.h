@@ -6,6 +6,7 @@
 #include <fstream>
 #include <list>
 #include <iterator>
+#include <functional>
 
 
 #include "DataTool.h"

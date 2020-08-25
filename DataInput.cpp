@@ -27,9 +27,9 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 		vector<string> data_set = data_tool.Split(line, ',');
 		
 		//Case1 ƒf[ƒ^‚ğŠi”[
-		for (int data_row = 0; data_row < data_set.size(); ++data_row) {
+		for (int data_row = 1; data_row < data_set.size(); ++data_row) {
 			mVectorDates.at(data_column).at(data_row)=data_set.at(data_row);
-			//cout << mVectorDates.at(data_column).at(data_row);
+			cout << mVectorDates.at(data_column).at(data_row);
 		}
 
 
@@ -40,7 +40,7 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 			//cout << *data_set_iterator;
 		}
 
-		//cout << endl;
+		cout << endl;
 		//++m_vector_iterator;
 		++data_column;
 	}
