@@ -13,9 +13,15 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	string file_path = data_tool.SetFilePath(ioFile);
 	
 	ifstream input_file(file_path);
+	vector<vector<string>>::iterator m_vector_iterator = mVectorDates.begin();
+	vector<string>::iterator data_set_iterator2nd;
+
+	vector<string>::iterator data_set_iterator;
 	string line;
 	int data_column = 0;
+	int data_row=0;
 
+	data_set_iterator = m_vector_iterator->begin();
 	//全行読み込む
 	while (getline(input_file, line)) {
 		vector<string> data_set = data_tool.Split(line, ',');
@@ -23,11 +29,18 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 		//データを格納
 		for (int data_row = 0; data_row < data_set.size(); data_row++) {
 			mVectorDates.at(data_column).at(data_row)= data_set.at(data_row);
-
 			//cout << mVectorDates.at(data_column).at(data_row);
 		}
 
+
+		
+		//データを格納
+		for (auto it = data_set.begin(); it != data_set.end(); ++it) {
+			mVectorDates.at(data_column).emplace_back(*it);
+		}
+
 		//cout << endl;
+		//++m_vector_iterator;
 		++data_column;
 	}
 	
@@ -35,6 +48,33 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 
 	return mVectorDates;
 }
+
+//const vector<vector<string>> DataInput::LoadCSVData(string& ioFile) {
+//	string file_path = data_tool.SetFilePath(ioFile);
+//
+//	ifstream input_file(file_path);
+//	string line;
+//	int data_column = 0;
+//
+//	//全行読み込む
+//	while (getline(input_file, line)) {
+//		vector<string> data_set = data_tool.Split(line, ',');
+//
+//		//データを格納
+//		for (int data_row = 0; data_row < data_set.size(); data_row++) {
+//			mVectorDates.at(data_column).at(data_row) = data_set.at(data_row);
+//
+//			//cout << mVectorDates.at(data_column).at(data_row);
+//		}
+//
+//		//cout << endl;
+//		++data_column;
+//	}
+//
+//	//cout << data_column << endl;
+//
+//	return mVectorDates;
+//}
 
 //入力したファイルデータから
 vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
