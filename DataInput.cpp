@@ -26,17 +26,18 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	while (getline(input_file, line)) {
 		vector<string> data_set = data_tool.Split(line, ',');
 		
-		//ƒf[ƒ^‚ğŠi”[
-		for (int data_row = 0; data_row < data_set.size(); data_row++) {
-			mVectorDates.at(data_column).at(data_row)= data_set.at(data_row);
-			//cout << mVectorDates.at(data_column).at(data_row);
-		}
+		//Case1 ƒf[ƒ^‚ğŠi”[
+		//for (int data_row = 0; data_row < data_set.size(); ++data_row) {
+		//	mVectorDates.at(data_column).at(data_row)=data_set.at(data_row);
+		//	//cout << mVectorDates.at(data_column).at(data_row);
+		//}
 
 
 		
-		//ƒf[ƒ^‚ğŠi”[
+		//Case2 ƒf[ƒ^‚ğŠi”[
 		for (auto it = data_set.begin(); it != data_set.end(); ++it) {
 			mVectorDates.at(data_column).emplace_back(*it);
+			//cout << *data_set_iterator;
 		}
 
 		//cout << endl;
