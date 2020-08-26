@@ -22,6 +22,7 @@ public:
 	const vector<string> Split(string& inLine, char inDeleteWord);//対象の文字列から指定した文字ごとに分割
 
 	const list<string> SplitToList(string& inLine, char inDeleteWord);//対象の文字列から指定した文字ごとに分割
+	const list<int> SplitNumber(string& inLine, char inDeleteWord);//対象の文字列から指定した文字ごとに分割
 
 
 	//ファイルの保存先をresourceフォルダ直下にする関数
