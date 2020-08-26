@@ -42,24 +42,20 @@ const void TestDataMaker ::GenerateData(const int& inNumOfData) {
 		for (int number = 0; number < mDataSize; ++number) {
 			if (number == 0) {
 				mData[number] = type(mt);
-			}
-			else {
-				if (mData[number - 1] == 0) {
+			}else {
+				if (mData[number - 1] == 0)
 					mData[number] = mData[number - 1] + third_number(mt);
-				}
-				else if (mData[number - 1] == 9) {
+				else if (mData[number - 1] == 9)
 					mData[number] = mData[number - 1] - third_number(mt);
-				}
 				else
 					mData[number] = mData[number - 1] + second_number(mt) - 3;
-
 			}
 		
-			if (number == 9) {
+			if (number == 9) 
 				test_file << "{" << number << "," << mData[number] << "}";
-			}else {
+			else
 				test_file << "{" << number << "," << mData[number] << "}.";
-			}
+			
 
 		}
 
@@ -109,8 +105,10 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 				}
 			}
 
-		test_csv_file << "{" << column_number << "." << player_location_datas[column_number] << "},";
-				
+		//test_csv_file << "{" << column_number << "." << player_location_datas[column_number] << "},";
+		test_csv_file <<  player_location_datas[column_number] << ",";
+
+
 		}
 
 		test_csv_file << endl;		
