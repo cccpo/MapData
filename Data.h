@@ -25,6 +25,10 @@ public:
 
 	map<string, vector<vector<string>>> user_datas;
 
+	vector<list<int>> mLos;
+
+	vector<list<int>> mListDates;
+
 	vector<vector<string>> mVectorDates;
 	vector<vector<string>> mSortVectorDates;
 	vector<vector<string>> mPriorityDates;

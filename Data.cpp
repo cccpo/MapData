@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data() :mVectorDates(10001, vector<string>(11)) {
+Data::Data() :mVectorDates(10001, vector<string>(11)),mLos(10001) {
 
 }
 
@@ -24,23 +24,25 @@ const void Data::LoadTestData(string& inFileName) {
 	cout << "Load Data..." << endl;
 
 	start = chrono::high_resolution_clock::now();//計測開始
+	
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出し、メンバ変数に格納
 	
+	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
+	//mLos = data_input.LoadCSVDataInt(inFileName);
+
 	//cout <<mVectorDates.size()<<endl;
 	end = chrono::high_resolution_clock::now();//計測終了
 
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	cout << "Time:" << time << endl;
 
-	cout << "Loading Completed" << endl;
+	//cout << "Loading Completed" << endl;
 
-	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
+	/*
 	
-	//ExtractPlayerCourceData(mSortVectorDates);
+	ExtractPlayerCourceData(mSortVectorDates);*/
 
-	/*string output_file_name = "AfterData2.csv";
-	
-	data_tool.MakeResultData(mPriorityDates, output_file_name);*/
+
 
 }
 
@@ -48,6 +50,10 @@ const void Data::ExtractPlayerCourceData(vector<vector<string>>& inDate) {
 	cout << "Extract Data..." << endl;
 
 	mPriorityDates = data_sort.ExtractData(inDate);
+
+	string output_file_name = "AfterData3.csv";
+
+	data_tool.MakeResultData(mPriorityDates, output_file_name);
 
 	cout << "Data Extraction Completed" << endl;
 }
