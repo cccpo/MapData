@@ -24,31 +24,39 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	int data_row=0;
 
 	data_set_iterator = m_vector_iterator->begin();
+	
 	//全行読み込む
 	while (getline(input_file, line)) {
-		vector<string> data_set = data_tool.Split(line, ',');
-		list<int> numdata_set = data_tool.SplitNumber(line, ',');
+		list<string> data_set = data_tool.Split(line, ',');
+		
 		
 		//Case1 データを格納
-		for (int data_row = 1; data_row < data_set.size(); ++data_row) {
-			mVectorDates.at(data_column).at(data_row)=data_set.at(data_row);
-			//cout << mVectorDates.at(data_column).at(data_row);
-		}
+		//for (int data_row = 1; data_row < data_set.size(); ++data_row) {
+		//	mVectorDates.at(data_column).at(data_row)=data_set.at(data_row);
+		//	//cout << mVectorDates.at(data_column).at(data_row);
+		//}
 
 
 		
 		//Case2 データを格納
 		for (auto it = data_set.begin(); it != data_set.end(); ++it) {
-			mVectorDates.at(data_column).emplace_back(*it);
-			//cout << *data_set_iterator;
+			mVectorDates.at(data_column).at(data_row) = *it;
+			//mVectorDates.at(data_column).emplace_back(*it);
+			//cout << mVectorDates.at(data_column).at(data_row);
+
+			++data_row;
 		}
 
-		cout << endl;
-		//++m_vector_iterator;
+		//cout << endl;
+		++m_vector_iterator;
 		++data_column;
+
+		data_row = 0;
 	}
 	
 	//cout << data_column << endl;
+
+
 
 	return mVectorDates;
 }
@@ -75,7 +83,7 @@ const vector<list<int>> DataInput::LoadCSVDataInt(string& ioFile) {
 	data_set_iterator = m_vector_iterator->begin();
 
 	
-	//全行読み込む
+	//全行読み込む CSV→vector<list<string>>
 	while (getline(input_file, line)) {
 		list<int> numdata_set = data_tool.SplitNumber(line, ',');
 		
@@ -142,38 +150,38 @@ const vector<list<int>> DataInput::LoadCSVDataInt(string& ioFile) {
 //}
 
 //入力したファイルデータから
-vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
-	ifstream ifs(inFileName);
-	vector<string> player_route,player_id, player_route2;
-	vector<int> pls_in;
-
-	if (!ifs)
-	{
-		//cout << "Error"<< endl;
-	}
-
-	string tmp;
-	while (getline(ifs, tmp)) {
-		ioVectorDatas.emplace_back(tmp);
-	}
-
-	/*cout << tmp << endl;*/
-
-	player_id = data_tool.Split(ioVectorDatas[0], ':');//分割
-	player_id.erase(player_id.begin());
-	
-	player_route = data_tool.Split(ioVectorDatas[1],':');
-	player_route.erase(player_route.begin());
-
-	player_route = data_tool.Split(player_route[0], '.');
-
-	pls_in=ConvertFileData(player_route);
-
-	return pls_in;
-
-
-
-}
+//vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
+//	ifstream ifs(inFileName);
+//	list<string> player_route,player_id, player_route2;
+//	list<int> pls_in;
+//
+//	if (!ifs)
+//	{
+//		//cout << "Error"<< endl;
+//	}
+//
+//	string tmp;
+//	while (getline(ifs, tmp)) {
+//		ioVectorDatas.emplace_back(tmp);
+//	}
+//
+//	/*cout << tmp << endl;*/
+//
+//	player_id = data_tool.Split(ioVectorDatas[0], ':');//分割
+//	player_id.erase(player_id.begin());
+//	
+//	player_route = data_tool.Split(ioVectorDatas[1],':');
+//	player_route.erase(player_route.begin());
+//
+//	player_route = data_tool.Split(player_route[0], '.');
+//
+//	pls_in=ConvertFileData(player_route);
+//
+//	return pls_in;
+//
+//
+//
+//}
 
 vector<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 	string tesu_a;

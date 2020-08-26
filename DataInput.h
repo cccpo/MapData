@@ -35,7 +35,7 @@ public:
 
 		//const list<vector<string>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
 
-		vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
+		//vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
 		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
 		vector<string> SearchPlayerData(string inPlayerID);
