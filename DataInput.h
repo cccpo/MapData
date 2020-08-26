@@ -20,7 +20,11 @@ public:
 		DataInput();
 		~DataInput();
 
+		list<vector<string>> mList;
+
 		vector<vector<string>> mVectorDates;//ƒf[ƒ^‚ğŠi”[‚·‚évector
+		vector<vector<int>> mIntVectorDates;
+
 
 		inline vector<string> GetPlayerCourseData(const int& inPlayerID) { return mVectorDates.at(inPlayerID); };
 		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };

@@ -1,6 +1,6 @@
 #include "DataInput.h"
 
-DataInput::DataInput() :mVectorDates(10001, vector<string>(11)){
+DataInput::DataInput() :mVectorDates(10001, vector<string>(11)),mIntVectorDates(10001,vector<int>(10)){
 	
 }
 
@@ -16,6 +16,8 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	vector<vector<string>>::iterator m_vector_iterator = mVectorDates.begin();
 	vector<string>::iterator data_set_iterator2nd;
 
+	//mList.resize(10001);
+
 	vector<string>::iterator data_set_iterator;
 	string line;
 	int data_column = 0;
@@ -25,11 +27,12 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	//全行読み込む
 	while (getline(input_file, line)) {
 		vector<string> data_set = data_tool.Split(line, ',');
+		list<int> numdata_set = data_tool.SplitNumber(line, ',');
 		
 		//Case1 データを格納
 		for (int data_row = 1; data_row < data_set.size(); ++data_row) {
 			mVectorDates.at(data_column).at(data_row)=data_set.at(data_row);
-			cout << mVectorDates.at(data_column).at(data_row);
+			//cout << mVectorDates.at(data_column).at(data_row);
 		}
 
 
