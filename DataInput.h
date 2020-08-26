@@ -23,7 +23,8 @@ public:
 		list<vector<string>> mList;
 
 		vector<vector<string>> mVectorDates;//ÉfÅ[É^Çäiî[Ç∑ÇÈvector
-		vector<vector<int>> mIntVectorDates;
+		//vector<list<int>> mIntVectorDates;
+		vector<list<int>> ks;
 
 
 		inline vector<string> GetPlayerCourseData(const int& inPlayerID) { return mVectorDates.at(inPlayerID); };

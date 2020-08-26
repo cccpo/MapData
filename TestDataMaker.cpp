@@ -84,12 +84,12 @@ const void TestDataMaker::GenerateTestDataCSV(string inFileName, int inNumOfData
 	string file_path = data_tool.SetFilePath(inFileName);
 
 	ofstream test_csv_file(file_path);//o—ÍŒ`®
-	test_csv_file << "PlayerID" << "," << "PlayerCource" << endl;
+	//test_csv_file << "PlayerID" << "," << "PlayerCource" << endl;
 
 	for (int row_number = 0; row_number < inNumOfData; ++row_number) {
 		string test_number = to_string(row_number);
 	
-		test_csv_file << "Player" << row_number << ",";
+		//test_csv_file << "Player" << row_number << ",";
 
 	
 		for (int column_number = 0; column_number < mDataSize; ++column_number) {
