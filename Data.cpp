@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data() :mVectorDates(10001, vector<string>(11)),mLos(10001) {
+Data::Data() :mVectorDates(10001, list<int>(11)),mLos(10001) {
 
 }
 
@@ -27,7 +27,6 @@ const void Data::LoadTestData(string& inFileName) {
 	
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出し、メンバ変数に格納
 	
-	mSortVectorDates = data_sort.DeleteKeyCategory(mVectorDates);//プレイヤーネームの削除
 	//mLos = data_input.LoadCSVDataInt(inFileName);
 
 	//cout <<mVectorDates.size()<<endl;
@@ -46,7 +45,7 @@ const void Data::LoadTestData(string& inFileName) {
 
 }
 
-const void Data::ExtractPlayerCourceData(vector<vector<string>>& inDate) {
+const void Data::ExtractPlayerCourceData(vector<list<int>>& inDate) {
 	cout << "Extract Data..." << endl;
 
 	mPriorityDates = data_sort.ExtractData(inDate);
