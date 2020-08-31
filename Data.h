@@ -31,7 +31,7 @@ public:
 
 	vector<list<int>> mVectorDates;
 	vector<vector<string>> mSortVectorDates;
-	vector<vector<string>> mPriorityDates;
+	vector<list<int>> mPriorityDates;
 
 	const void GenerateTestData(string& inFileName);//テストデータ生成実行関数
 	const void LoadTestData(string& inFileName);//CSVデータ読取実行関数

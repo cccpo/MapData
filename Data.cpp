@@ -35,12 +35,16 @@ const void Data::LoadTestData(string& inFileName) {
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	cout << "Time:" << time << endl;
 
-	//cout << "Loading Completed" << endl;
+	cout << "Loading Completed" << endl;
 
-	/*
+	start = chrono::high_resolution_clock::now();//計測開始
 	
-	ExtractPlayerCourceData(mSortVectorDates);*/
+	ExtractPlayerCourceData(mVectorDates);
 
+	end = chrono::high_resolution_clock::now();//計測終了
+
+	time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	cout << "Time:" << time << endl;
 
 
 }
