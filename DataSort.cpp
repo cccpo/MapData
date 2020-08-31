@@ -23,6 +23,21 @@ const vector<vector<string>> DataSort::DeleteKeyCategory(vector<vector<string>>&
 	return sort_dates;
 }
 
+const vector<list<int>> DataSort::IntDeleteKeyCategory(vector<vector<string>>& inDataList) {
+	vector<list<int>> sort_dates;//データを格納するvector
+
+	//sort_dates = inDataList;
+
+	sort_dates.erase(sort_dates.begin());//1行目の消去
+
+	 //プレイヤーネームを削除
+	for (int data_column = 0; data_column < sort_dates.size(); ++data_column) {
+		sort_dates.at(data_column).erase(sort_dates.at(data_column).begin());
+	}
+
+	return sort_dates;
+}
+
 //データの抽出を行う
 const vector<vector<string>> DataSort::ExtractData(vector<vector<string>>& inDataList) {
 	vector<vector<string>> result_list(10000, vector<string>(10));
