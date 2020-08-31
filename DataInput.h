@@ -22,22 +22,22 @@ public:
 
 		list<vector<string>> mList;
 
-		vector<vector<string>> mVectorDates;//データを格納するvector
+		vector<list<int>> mVectorDates;//データを格納するvector
 		//vector<list<int>> mIntVectorDates;
 		vector<list<int>> ks;
 
 
-		inline vector<string> GetPlayerCourseData(const int& inPlayerID) { return mVectorDates.at(inPlayerID); };
-		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };
+		/*inline vector<string> GetPlayerCourseData(const int& inPlayerID) { return mVectorDates.at(inPlayerID); };
+		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };*/
 
-		const vector<vector<string>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
+		const vector<list<int>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
 		const vector<list<int>>  LoadCSVDataInt(string& ioFile);//CSVデータを読み込む関数
 
 		//const list<vector<string>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
 
 		//vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		
-		vector<int> ConvertFileData(vector<string>& ioVectorDatas);
+		list<int> ConvertFileData(vector<string>& ioVectorDatas);
 		vector<string> SearchPlayerData(string inPlayerID);
 
 		void Sort();

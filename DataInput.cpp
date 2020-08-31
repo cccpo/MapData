@@ -1,6 +1,6 @@
 #include "DataInput.h"
 
-DataInput::DataInput() :mVectorDates(10001, vector<string>(11)),ks(10001){
+DataInput::DataInput() :mVectorDates(10001, list<int>(10)),ks(10001){
 	
 }
 
@@ -8,36 +8,28 @@ DataInput::~DataInput() {
 
 }
 
-//CSVデータを読み込む関数
-const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
-	string file_path = data_tool.SetFilePath(ioFile);
-	
-	ifstream input_file(file_path);
-	vector<vector<string>>::iterator m_vector_iterator = mVectorDates.begin();
-	vector<string>::iterator data_set_iterator2nd;
-
-	vector<list<string>> s_list;
-
-	//mList.resize(10001);
-
-	vector<string>::iterator data_set_iterator;
+//CSVデータ読込関数
+const vector<list<int>> DataInput:: LoadCSVData(string& ioFile) {
 	string line;
-
-	int data_row=0;
-
 	
+	//ファイルパス設定
+	string file_path = data_tool.SetFilePath(ioFile);
+	ifstream input_file(file_path);
+
+	//イテレータ設定
+	vector<list<int>>::iterator m_vector_iterator = mVectorDates.begin();
+	list<int>::iterator mm_vector_iterator;
 	
 	//全行読み込む
 	while (getline(input_file, line)) {
-		data_set_iterator = m_vector_iterator->begin();//
-		list<string> data_set = data_tool.Split(line, ',');//セルごとに分ける
+		mm_vector_iterator = m_vector_iterator->begin();//
+		list<int> data_set = data_tool.Split(line, ',');//セルごとに分け、list<int>で出力
 		
-		//Case2 データを格納
+		//データを格納
 		for (auto it = data_set.begin(); it != data_set.end(); ++it) {
-			*data_set_iterator = *it;
-			//cout << *data_set_iterator;
-			++data_set_iterator;
-			//++data_row;
+			*mm_vector_iterator = *it;
+			//cout << *mm_vector_iterator;
+			++mm_vector_iterator;
 		}
 
 		//cout << endl;
@@ -46,20 +38,8 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 
 
 	}
+	//cout << mVectorDates.at(0).size();
 
-	//ks = data_sort.IntDeleteKeyCategory(mVectorDates);//ここで1行目とプレイヤーネームの消去
-	
-	//vector<list<int>> ::iterator ks_itt = ks.begin();
-	//list<int>::iterator ks_it = ks_itt->begin();
-
-	//for (vector<list<int>> ::iterator ks_itt = ks.begin(); ks_itt != ks.end(); ++ks_itt) {
-	//	for (list<int>::iterator iterVec = (*ks_itt).begin(); iterVec != (*ks_itt).end(); ++iterVec) {
-	//		cout << *iterVec;
-	//	}
-
-	//	cout << endl;
-	//}
-	
 
 
 
@@ -189,9 +169,9 @@ const vector<list<int>> DataInput::LoadCSVDataInt(string& ioFile) {
 //
 //}
 
-vector<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
+list<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 	string tesu_a;
-	vector<int> lisya;
+	list<int> lisya;
 	
 	for (int i = 0; i < ioVectorDatas.size(); i++) {
 		//cout << "PlayerRoutePOS:" << i << endl;
@@ -211,7 +191,7 @@ vector<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 
 	//データをリストに格納する
 	for (int i = 0; i < lisya.size(); i++) {
-		tesu_a = to_string(lisya[i]);
+		//tesu_a = to_string(lisya[i]);
 		//cout << tesu_a << endl;
 	}
 
@@ -220,22 +200,22 @@ vector<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 
 vector<string> DataInput::SearchPlayerData(string inPlayerID) {
 
-	for (int i = 0; i < mVectorDates.size(); i++) {
-		if (mVectorDates.at(i).at(0) == inPlayerID) {
-			return mVectorDates.at(i);
-		}
-	}
+	//for (int i = 0; i < mVectorDates.size(); i++) {
+	//	if (mVectorDates.at(i).at(0) == inPlayerID) {
+	//		return mVectorDates.at(i);
+	//	}
+	//}
 
 }
 
 //引数としたプレイヤーネームが存在するかを検索するシステム
 bool DataInput::IsExitPlayerID(string inPlayerID) {
-	for (int i = 0; i < mVectorDates.size(); i++) {
-		if (mVectorDates.at(i).at(0) == inPlayerID) {
-			cout << "Find" << endl;
-			return true;
-		}
-	}
+	//for (int i = 0; i < mVectorDates.size(); i++) {
+	//	if (mVectorDates.at(i).at(0) == inPlayerID) {
+	//		cout << "Find" << endl;
+	//		return true;
+	//	}
+	//}
 
 	cout << "Can't find" << inPlayerID << endl;
 	return false;
@@ -243,5 +223,5 @@ bool DataInput::IsExitPlayerID(string inPlayerID) {
 }
 
 void DataInput::Sort() {
-	data_sort.DeleteKeyCategory(mVectorDates);
+	//data_sort.DeleteKeyCategory(mVectorDates);
 }
