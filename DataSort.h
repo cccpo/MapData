@@ -21,7 +21,7 @@ public:
 	const vector<list<int>> IntDeleteKeyCategory(vector<vector<string>>& inDataList);
 
 
-	const vector<vector<string>> ExtractData(vector<vector<string>>& inDataList);//データの抽出を行う
+	const vector<list<int>> ExtractData(vector<list<int>>& inDataList);//データの抽出を行う
 protected:
 	DataTool data_tool;
 };
