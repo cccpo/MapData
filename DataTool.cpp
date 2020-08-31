@@ -9,11 +9,11 @@ DataTool::~DataTool() {
 }
 
 //‘ÎÛ‚Ì•¶š—ñ‚©‚çw’è‚µ‚½•¶š‚²‚Æ‚É•ªŠ„
-const vector<string> DataTool::Split(string& inLine, char inDeleteWord) {
+const list<string> DataTool::Split(string& inLine, char inDeleteWord) {
     unsigned __int32 line_first = 0;
     unsigned __int32 line_last =  inLine.find_first_of(inDeleteWord);
     
-    vector<string> result;
+    list<string> result;
 
     while (line_first < inLine.size()) {
         string subStr(inLine, line_first, line_last - line_first);
