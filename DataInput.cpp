@@ -16,45 +16,50 @@ const vector<vector<string>> DataInput:: LoadCSVData(string& ioFile) {
 	vector<vector<string>>::iterator m_vector_iterator = mVectorDates.begin();
 	vector<string>::iterator data_set_iterator2nd;
 
+	vector<list<string>> s_list;
+
 	//mList.resize(10001);
 
 	vector<string>::iterator data_set_iterator;
 	string line;
-	int data_column = 0;
+
 	int data_row=0;
 
-	data_set_iterator = m_vector_iterator->begin();
+	
 	
 	//全行読み込む
 	while (getline(input_file, line)) {
-		list<string> data_set = data_tool.Split(line, ',');
-		
-		
-		//Case1 データを格納
-		//for (int data_row = 1; data_row < data_set.size(); ++data_row) {
-		//	mVectorDates.at(data_column).at(data_row)=data_set.at(data_row);
-		//	//cout << mVectorDates.at(data_column).at(data_row);
-		//}
-
-
+		data_set_iterator = m_vector_iterator->begin();//
+		list<string> data_set = data_tool.Split(line, ',');//セルごとに分ける
 		
 		//Case2 データを格納
 		for (auto it = data_set.begin(); it != data_set.end(); ++it) {
-			mVectorDates.at(data_column).at(data_row) = *it;
-			//mVectorDates.at(data_column).emplace_back(*it);
-			//cout << mVectorDates.at(data_column).at(data_row);
-
-			++data_row;
+			*data_set_iterator = *it;
+			//cout << *data_set_iterator;
+			++data_set_iterator;
+			//++data_row;
 		}
 
 		//cout << endl;
 		++m_vector_iterator;
-		++data_column;
-
-		data_row = 0;
-	}
 	
-	//cout << data_column << endl;
+
+
+	}
+
+	//ks = data_sort.IntDeleteKeyCategory(mVectorDates);//ここで1行目とプレイヤーネームの消去
+	
+	//vector<list<int>> ::iterator ks_itt = ks.begin();
+	//list<int>::iterator ks_it = ks_itt->begin();
+
+	//for (vector<list<int>> ::iterator ks_itt = ks.begin(); ks_itt != ks.end(); ++ks_itt) {
+	//	for (list<int>::iterator iterVec = (*ks_itt).begin(); iterVec != (*ks_itt).end(); ++iterVec) {
+	//		cout << *iterVec;
+	//	}
+
+	//	cout << endl;
+	//}
+	
 
 
 
@@ -97,10 +102,11 @@ const vector<list<int>> DataInput::LoadCSVDataInt(string& ioFile) {
 		
 
 
+
 		//Case2 データを格納
 		for (auto it = numdata_set.begin(); it != numdata_set.end(); ++it) {
 			
-			ks.at(data_column).emplace_back(*it);
+			//ks.at(data_column).at(data_row) = *it;
 			
 			//data_set_iterator.
 			//
