@@ -8,17 +8,25 @@ DataTool::~DataTool() {
 
 }
 
-//対象の文字列から指定した文字ごとに分割
-const list<string> DataTool::Split(string& inLine, char inDeleteWord) {
+//対象の文字列から指定した文字ごとに分割し、y座標の値を出力する
+const list<int> DataTool::Split(string& inLine, char inDeleteWord) {
     unsigned __int32 line_first = 0;
     unsigned __int32 line_last =  inLine.find_first_of(inDeleteWord);
     
-    list<string> result;
+    list<int> result;
+    list<int>::iterator result_iterator = result.begin();
+
+  
 
     while (line_first < inLine.size()) {
         string subStr(inLine, line_first, line_last - line_first);
 
-        result.emplace_back(subStr);
+
+        //cout << subStr[3] << endl;//y軸の数値を取得
+        
+        //内部表現が数値であるためにできる手法
+        //二桁である場合は別の方法でなければならない
+        result.emplace_back(subStr[3] - '0');
 
         line_first = line_last + 1;
         line_last = inLine.find_first_of(inDeleteWord, line_first);
@@ -27,6 +35,19 @@ const list<string> DataTool::Split(string& inLine, char inDeleteWord) {
             line_last = inLine.size();
         }
     }
+
+    //プレイヤーネーム削除
+
+    for (auto it = result.begin(); it != result.end(); ++it) {
+        if (result.begin() == it) {
+            it = result.erase(it);
+        }
+      
+        cout << *it << endl;
+
+    }
+
+  // cout << result.size() <<endl;
 
     return result;
 }
