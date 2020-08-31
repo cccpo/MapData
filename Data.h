@@ -29,13 +29,13 @@ public:
 
 	vector<list<int>> mListDates;
 
-	vector<vector<string>> mVectorDates;
+	vector<list<int>> mVectorDates;
 	vector<vector<string>> mSortVectorDates;
 	vector<vector<string>> mPriorityDates;
 
 	const void GenerateTestData(string& inFileName);//テストデータ生成実行関数
 	const void LoadTestData(string& inFileName);//CSVデータ読取実行関数
-	const void ExtractPlayerCourceData(vector<vector<string>>& inDate);
+	const void ExtractPlayerCourceData(vector<list<int>>& inDate);
 
 protected:
 	DataInput data_input;
