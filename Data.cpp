@@ -35,16 +35,16 @@ const void Data::LoadTestData(string& inFileName) {
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	cout << "Time:" << time << endl;
 
-	//cout << "Loading Completed" << endl;
+	cout << "Loading Completed" << endl;
 
-	//start = chrono::high_resolution_clock::now();//計測開始
+	start = chrono::high_resolution_clock::now();//計測開始
 	//
 	ExtractPlayerCourceData(mVectorDates);
 
-	//end = chrono::high_resolution_clock::now();//計測終了
+	end = chrono::high_resolution_clock::now();//計測終了
 
-	//time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	//cout << "Time:" << time << endl;
+	time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	cout << "Time:" << time << endl;
 
 
 }
@@ -54,7 +54,7 @@ const void Data::ExtractPlayerCourceData(vector<vector<int>>& inDate) {
 
 	mPriorityDates = data_sort.ExtractData(inDate);
 
-	string output_file_name = "AfterData3.csv";
+	string output_file_name = "AfterData2nd.csv";
 
 	data_tool.MakeResultData(mPriorityDates, output_file_name);
 

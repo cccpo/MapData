@@ -1,6 +1,6 @@
 #include "DataInput.h"
 
-DataInput::DataInput() :mVectorDates(10001, list<int>(10)),ks(10001){
+DataInput::DataInput() :mVectorDates(10001, vector<int>(10)),ks(10001){
 	
 }
 
@@ -9,7 +9,7 @@ DataInput::~DataInput() {
 }
 
 //CSVデータ読込関数
-const vector<list<int>> DataInput:: LoadCSVData(string& ioFile) {
+const vector<vector<int>> DataInput:: LoadCSVData(string& ioFile) {
 	string line;
 	
 	//ファイルパス設定
@@ -17,8 +17,8 @@ const vector<list<int>> DataInput:: LoadCSVData(string& ioFile) {
 	ifstream input_file(file_path);
 
 	//イテレータ設定
-	vector<list<int>>::iterator m_vector_iterator = mVectorDates.begin();
-	list<int>::iterator mm_vector_iterator;
+	vector<vector<int>>::iterator m_vector_iterator = mVectorDates.begin();
+	vector<int>::iterator mm_vector_iterator;
 	
 	//全行読み込む
 	while (getline(input_file, line)) {
@@ -38,7 +38,9 @@ const vector<list<int>> DataInput:: LoadCSVData(string& ioFile) {
 
 
 	}
-	//cout << mVectorDates.at(0).size();
+	mVectorDates.erase(mVectorDates.begin());
+
+	
 
 
 
