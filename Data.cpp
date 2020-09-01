@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data() :mVectorDates(10001, vector<int>(11)),mLos(10001) {
+Data::Data() :mVectorDates(10001, vector<int>(11)) {
 
 }
 
@@ -26,10 +26,7 @@ const void Data::LoadTestData(string& inFileName) {
 	start = chrono::high_resolution_clock::now();//計測開始
 	
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出し、メンバ変数に格納
-	
-	//mLos = data_input.LoadCSVDataInt(inFileName);
 
-	//cout <<mVectorDates.size()<<endl;
 	end = chrono::high_resolution_clock::now();//計測終了
 
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
@@ -38,7 +35,7 @@ const void Data::LoadTestData(string& inFileName) {
 	cout << "Loading Completed" << endl;
 
 	start = chrono::high_resolution_clock::now();//計測開始
-	//
+	
 	ExtractPlayerCourceData(mVectorDates);
 
 	end = chrono::high_resolution_clock::now();//計測終了
