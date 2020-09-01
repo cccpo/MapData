@@ -33,7 +33,7 @@ const void Data::LoadTestData(string& inFileName) {
 	end = chrono::high_resolution_clock::now();//計測終了
 
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	cout << "Time:" << time << endl;
+	cout << "[DataInput::LoadCSVData]Time:" << time << endl;
 
 	cout << "Loading Completed" << endl;
 
@@ -44,7 +44,7 @@ const void Data::LoadTestData(string& inFileName) {
 	end = chrono::high_resolution_clock::now();//計測終了
 
 	time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	cout << "Time:" << time << endl;
+	cout << "[DataSort::ExtractData]Time:" << time << endl;
 
 
 }
