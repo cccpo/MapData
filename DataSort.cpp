@@ -125,7 +125,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 					for (mm_vector_iterator = (*m_vector_iterator2nd).begin(); mm_vector_iterator != (*m_vector_iterator2nd).end();++mm_vector_iterator) {
 						//cout << *mm_vector_iterator;
 					}
-					cout << *mm_vector_iterator2nd << endl;
+					//cout << *mm_vector_iterator2nd << endl;
 
 					pair_list.emplace_back(((data_column + 1) + NumOfRoop));//ペアリストに追加
 					//cout << "Data_column(" << i_count <<")+NumofRoop"<< NumOfRoop << endl;;
