@@ -31,7 +31,7 @@ public:
 	bool GetFileNames(string inFolderPath, vector<string>& inFileName);
 	const bool IsExitNumber(vector<int>& inVector, int& inNumber);
 
-	const void MakeResultData(vector<vector<string>>& inDataList, string inFileName);
+	const void MakeResultData(vector<list<int>>& inDataList, string inFileName);
 	const void MakeResultDataInt(vector<list<int>>& inDataList, string inFileName);
 
 };

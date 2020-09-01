@@ -20,8 +20,6 @@ const list<int> DataTool::Split(string& inLine, char inDeleteWord) {
 
     while (line_first < inLine.size()) {
         string subStr(inLine, line_first, line_last - line_first);
-
-
         //cout << subStr[3] << endl;//y軸の数値を取得
         
         //内部表現が数値であるためにできる手法
@@ -37,17 +35,16 @@ const list<int> DataTool::Split(string& inLine, char inDeleteWord) {
     }
 
     //プレイヤーネーム削除
-
     for (auto it = result.begin(); it != result.end(); ++it) {
         if (result.begin() == it) {
             it = result.erase(it);
-        }
-      
-        cout << *it << endl;
+        } 
+        
+       // cout << *it << endl;
 
     }
 
-  // cout << result.size() <<endl;
+    result.resize(10);
 
     return result;
 }
@@ -120,19 +117,26 @@ const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
     }
 }
 
-const void DataTool::MakeResultData(vector<vector<string>>& inDataList, string inFileName) {
+const void DataTool::MakeResultData(vector<list<int>>& inDataList, string inFileName) {
     string file_path = SetFilePath(inFileName);
+
+    //イテレータ設定
+    vector<list<int>>::iterator m_vector_iterator = inDataList.begin();
+    list<int>::iterator mm_vector_iterator;
 
     ofstream data_sort_result(file_path);//出力形式
     data_sort_result << "Num" << "," << "Cource" << endl;
 
-    for (int number = 0; number < inDataList.size(); number++) {
-        for (int column_number = 0; column_number < inDataList.at(number).size(); ++column_number) {
-            if (!inDataList.at(number).at(column_number).empty() && inDataList.at(number).at(column_number) == inDataList.at(number).back()) {
-                data_sort_result << inDataList.at(number).at(column_number);
-            }else {
-                data_sort_result << inDataList.at(number).at(column_number) << ",";
-            }
+    for (m_vector_iterator; m_vector_iterator!= inDataList.end(); ++m_vector_iterator) {
+        mm_vector_iterator = (*m_vector_iterator).begin();
+
+        for (mm_vector_iterator; mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
+            //if (*mm_vector_iterator &&
+            //    inDataList.at(number).at(column_number) == inDataList.at(number).back()) {
+            //    data_sort_result << *mm_vector_iterator;
+         /*   }else {*/
+                data_sort_result << *mm_vector_iterator << ",";
+            //}
         }
 
         data_sort_result << endl;
