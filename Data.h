@@ -23,14 +23,10 @@ public:
 	Data();
 	~Data();
 
-	map<string, vector<vector<string>>> user_datas;
-
-	vector<list<int>> mLos;
-
 	vector<list<int>> mListDates;
 
 	vector<vector<int>> mVectorDates;
-	vector<vector<string>> mSortVectorDates;
+
 	vector<list<int>> mPriorityDates;
 
 	const void GenerateTestData(string& inFileName);//テストデータ生成実行関数
