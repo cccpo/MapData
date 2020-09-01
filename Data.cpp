@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data() :mVectorDates(10001, list<int>(11)),mLos(10001) {
+Data::Data() :mVectorDates(10001, vector<int>(11)),mLos(10001) {
 
 }
 
@@ -35,16 +35,16 @@ const void Data::LoadTestData(string& inFileName) {
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	cout << "Time:" << time << endl;
 
-	cout << "Loading Completed" << endl;
+	//cout << "Loading Completed" << endl;
 
-	start = chrono::high_resolution_clock::now();//計測開始
-	
-	ExtractPlayerCourceData(mVectorDates);
+	//start = chrono::high_resolution_clock::now();//計測開始
+	//
+	//ExtractPlayerCourceData(mVectorDates);
 
-	end = chrono::high_resolution_clock::now();//計測終了
+	//end = chrono::high_resolution_clock::now();//計測終了
 
-	time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	cout << "Time:" << time << endl;
+	//time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	//cout << "Time:" << time << endl;
 
 
 }

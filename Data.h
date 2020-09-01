@@ -29,7 +29,7 @@ public:
 
 	vector<list<int>> mListDates;
 
-	vector<list<int>> mVectorDates;
+	vector<vector<int>> mVectorDates;
 	vector<vector<string>> mSortVectorDates;
 	vector<list<int>> mPriorityDates;
 
