@@ -106,7 +106,8 @@ bool DataTool::GetFileNames(string inFolderPath, vector<string>& inFileName)
     return true;
 }
 
-const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
+//ƒŠƒXƒg“à‚É’Tõ‚·‚é”’l‚ª‚ ‚é‚©‚ğ’T‚·
+const bool DataTool::IsExitNumber(list<int>& inVector, int& inNumber) {
     auto itr = find(inVector.begin(), inVector.end(), inNumber);
     size_t index = distance(inVector.begin(), itr);
    
