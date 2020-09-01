@@ -39,7 +39,7 @@ const void Data::LoadTestData(string& inFileName) {
 
 	//start = chrono::high_resolution_clock::now();//計測開始
 	//
-	//ExtractPlayerCourceData(mVectorDates);
+	ExtractPlayerCourceData(mVectorDates);
 
 	//end = chrono::high_resolution_clock::now();//計測終了
 
@@ -49,7 +49,7 @@ const void Data::LoadTestData(string& inFileName) {
 
 }
 
-const void Data::ExtractPlayerCourceData(vector<list<int>>& inDate) {
+const void Data::ExtractPlayerCourceData(vector<vector<int>>& inDate) {
 	cout << "Extract Data..." << endl;
 
 	mPriorityDates = data_sort.ExtractData(inDate);
