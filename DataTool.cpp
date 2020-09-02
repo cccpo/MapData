@@ -117,32 +117,27 @@ const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
     }
 }
 
+//抽出結果をCSVデータに出力する
 const void DataTool::MakeResultData(vector<list<int>>& inDataList, string inFileName) {
     string file_path = SetFilePath(inFileName);
-
-    //イテレータ設定
-    vector<list<int>>::iterator m_vector_iterator = inDataList.begin();
-    list<int>::iterator mm_vector_iterator;
 
     ofstream data_sort_result(file_path);//出力形式
     data_sort_result << "Num" << "," << "Cource" << endl;
 
-    for (m_vector_iterator; m_vector_iterator!= inDataList.end(); ++m_vector_iterator) {
-        for (mm_vector_iterator = (*m_vector_iterator).begin(); mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
-            //if (*mm_vector_iterator &&
-            //    inDataList.at(number).at(column_number) == inDataList.at(number).back()) {
-            //    data_sort_result << *mm_vector_iterator;
-         /*   }else {*/
-                cout << *mm_vector_iterator;
-                data_sort_result << *mm_vector_iterator << ",";
-            //}
+    for (vector<list<int>>::iterator m_vector_iterator = inDataList.begin();
+        m_vector_iterator!= inDataList.end(); ++m_vector_iterator) {
+        
+        for (list<int>::iterator mm_vector_iterator = (*m_vector_iterator).begin();
+            mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
+
+            cout << *mm_vector_iterator;
+            data_sort_result << *mm_vector_iterator << ",";
+         
         }
 
         data_sort_result << endl;
 
     }
-
-
     data_sort_result.close();
 }
 

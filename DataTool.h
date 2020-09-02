@@ -31,6 +31,7 @@ public:
 	bool GetFileNames(string inFolderPath, vector<string>& inFileName);
 	const bool IsExitNumber(vector<int>& inVector, int& inNumber);
 
+	//抽出結果をCSVデータに出力する
 	const void MakeResultData(vector<list<int>>& inDataList, string inFileName);
 	const void MakeResultDataInt(vector<list<int>>& inDataList, string inFileName);
 
