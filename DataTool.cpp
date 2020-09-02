@@ -106,8 +106,7 @@ bool DataTool::GetFileNames(string inFolderPath, vector<string>& inFileName)
     return true;
 }
 
-//ƒŠƒXƒg“à‚É’Tõ‚·‚é”’l‚ª‚ ‚é‚©‚ğ’T‚·
-const bool DataTool::IsExitNumber(list<int>& inVector, int& inNumber) {
+const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
     auto itr = find(inVector.begin(), inVector.end(), inNumber);
     size_t index = distance(inVector.begin(), itr);
    
@@ -129,13 +128,12 @@ const void DataTool::MakeResultData(vector<list<int>>& inDataList, string inFile
     data_sort_result << "Num" << "," << "Cource" << endl;
 
     for (m_vector_iterator; m_vector_iterator!= inDataList.end(); ++m_vector_iterator) {
-        mm_vector_iterator = (*m_vector_iterator).begin();
-
-        for (mm_vector_iterator; mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
+        for (mm_vector_iterator = (*m_vector_iterator).begin(); mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
             //if (*mm_vector_iterator &&
             //    inDataList.at(number).at(column_number) == inDataList.at(number).back()) {
             //    data_sort_result << *mm_vector_iterator;
          /*   }else {*/
+                cout << *mm_vector_iterator;
                 data_sort_result << *mm_vector_iterator << ",";
             //}
         }
