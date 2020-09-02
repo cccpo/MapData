@@ -68,7 +68,7 @@ const vector<list<int>> DataSort::IntDeleteKeyCategory(vector<vector<string>>& i
 
 //データの抽出を行う
 const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
-	vector<list<int>> result_list(10000, list<int>(10));
+	vector<list<int>> result_list(100, list<int>(11));
 	
 	vector<int> pair_list;//組み合わせが見つかった経路を格納する
 
@@ -89,7 +89,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 
 	vector<list<int>>::iterator result_list_iretator = result_list.begin();
 	list<int>::iterator rresult_list_iretator;
-	rresult_list_iretator = (*result_list_iretator).begin();
+	
 
 	int i_count=0;
 	int pair_count = 0;//ペア数をカウントする
@@ -155,7 +155,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 
 			//ペア数が3個以上であればファイルに追加
 			if (pair_count >= 3) {
-				
+				rresult_list_iretator = (*result_list_iretator).begin();
 
 				
 				//*result_list_iretator = *m_vector_iterator;
@@ -173,12 +173,20 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 					cout << "No." << pair_list.at(l)<<" ";
 				}
 
+
+				*rresult_list_iretator = pair_count;
 				for (mm_vector_iterator = (*m_vector_iterator).begin(); mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
+					++rresult_list_iretator;
+					
 					//cout << "a" << endl;
-					cout << *mm_vector_iterator;
+					*rresult_list_iretator = *mm_vector_iterator;
+				/*	cout << *mm_vector_iterator;*/
+					
 				}
 
 				cout << endl;
+
+				
 				//cout << "Pair:" << pair_count << endl;
 				//cout << endl;
 				//inDataList.erase(inDataList.begin() + i);
@@ -222,12 +230,14 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 		
 		pair_count = 0;
 		pair_list.clear();
-		result_list.resize(num_of_pairs);//ペア数分の行数にリサイズ
+		
 		AllRoop += NumOfRoop;//AllRoopに加算
 	}
+	result_list.resize(num_of_pairs);//ペア数分の行数にリサイズ
 	//cout << except_number_list.size() << endl;
 	cout << AllRoop<<endl;//全ループ回数の確認
 	
+	cout << result_list.size() << endl;
 
 	return result_list;
 }
