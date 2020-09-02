@@ -73,7 +73,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 	vector<int> pair_list;//組み合わせが見つかった経路を格納する
 
 	//イテレータ設定
-	vector<vector<int>>::iterator m_vector_iterator = inDataList.begin();//引数
+	vector<vector<int>>::iterator m_vector_iterator;//引数
 	vector<vector<int>>::iterator m_vector_iterator2nd;
 
 
@@ -82,13 +82,14 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 	vector<int>::iterator mm_vector_iterator3rd = (*m_vector_iterator).begin();
 
 	
-	list<int> except_number_list;//除外リスト
+	vector<int> except_number_list;//除外リスト
 
 
 	vector<string>::iterator it;
 
 	vector<list<int>>::iterator result_list_iretator = result_list.begin();
-	list<int> rresult_list_iretator;
+	list<int>::iterator rresult_list_iretator;
+	rresult_list_iretator = (*result_list_iretator).begin();
 
 	int i_count=0;
 	int pair_count = 0;//ペア数をカウントする
@@ -96,6 +97,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 	int num_of_pairs = 0;//複数人使用した経路数をカウントする
 
 	int data_column = 0;
+	int data_row;
 
 	//cout << inDataList.size() << endl;
 	//cout << *mm_vector_iterator3rd << endl;
@@ -105,13 +107,21 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 
 	int NumOfRoop;
 	int AllRoop = 0;
+
+
 	//データの行数分回す
-	for (m_vector_iterator; m_vector_iterator != inDataList.end(); ++m_vector_iterator) {
+	for (m_vector_iterator = inDataList.begin(); m_vector_iterator != inDataList.end(); ++m_vector_iterator) {
 
 		NumOfRoop = 0;
 
+		data_row = 0;
+		//cout << "[DataColumn:"<<data_column <<"]" <<endl;
+	/*	for (auto ex_it = except_number_list.begin(); ex_it != except_number_list.end(); ++ex_it) {
+			cout << *ex_it << endl;
+		}*/
+
 		//除外リストに入っているかを確認
-		if (!data_tool.IsExitNumber(except_number_list, data_column)) {
+		//if (!data_tool.IsExitNumber(except_number_list, data_column)) {
 			//cout << data_column << endl;
 
 			m_vector_iterator2nd = m_vector_iterator+1;
@@ -120,77 +130,102 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 				
 				//合致する経路があれば抽出、同一のペア数をカウント
 				if (*m_vector_iterator == *m_vector_iterator2nd) {
-					
+					//cout << "roop_count:" << data_row << endl;
 					//合致した値を確認する
 					for (mm_vector_iterator = (*m_vector_iterator2nd).begin(); mm_vector_iterator != (*m_vector_iterator2nd).end();++mm_vector_iterator) {
 						//cout << *mm_vector_iterator;
 					}
-					//cout << *mm_vector_iterator2nd << endl;
-
+					
+					//cout << data_column + 1 + NumOfRoop << endl;
+					
+					//cout << "[DataColumn:" << data_column << "]" << (data_column + 1) + NumOfRoop <<endl;
 					pair_list.emplace_back(((data_column + 1) + NumOfRoop));//ペアリストに追加
-					//cout << "Data_column(" << i_count <<")+NumofRoop"<< NumOfRoop << endl;;
-					//except_number_list.emplace_back((data_column + 1) + NumOfRoop);//除外リストに追加
+				
+					except_number_list.emplace_back((data_column + 1) + NumOfRoop);//除外リストに追加
 					++pair_count;
-					//cout << "Pair:" << pair_count << endl;;
+					
 					//cout << endl;
-					++i_count;
+
+				
 				}
 				
+				++data_row;
 				++NumOfRoop;
 			}
 
-			
-			
-
-			//ペア数が~個以上であればファイルに追加
+			//ペア数が3個以上であればファイルに追加
 			if (pair_count >= 3) {
+				
 
-				//for (int j = 0; j < inDataList.at(data_column).size(); ++j)
+				
 				//*result_list_iretator = *m_vector_iterator;
-				//rresult_list_iretator = (*result_list_iretator).begin();
+				
 
 				//string number = to_string(pair_count);
-				cout << "No." << data_column << "'s Pair: ";
+				//cout << "No." << data_column << "'s Pair: ";
 
 				for (int l=0; l < pair_list.size(); ++l) {
 					string s_pair = to_string(pair_list.at(l));
-					//result_list.at(result_list_column).emplace_back(to_string(l));//末尾に同一のプレイヤーを追加
+					//cout << pair_list.at(l);
+					//except_number_list.emplace_back(pair_list.at(l));//除外リストに追加
+					
+					
 					cout << "No." << pair_list.at(l)<<" ";
 				}
 
-				cout << endl;
+				for (mm_vector_iterator = (*m_vector_iterator).begin(); mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
+					//cout << "a" << endl;
+					cout << *mm_vector_iterator;
+				}
 
+				cout << endl;
+				//cout << "Pair:" << pair_count << endl;
+				//cout << endl;
 				//inDataList.erase(inDataList.begin() + i);
 				//result_list.at(result_list_column).emplace_back(to_string(pair_count));
+				//for (mm_vector_iterator = (*m_vector_iterator2nd).begin(); mm_vector_iterator != (*m_vector_iterator2nd).end(); ++mm_vector_iterator) {
+				//	cout << *mm_vector_iterator;
+				//}
 
-				//result_list_iretator = result_list_iretator->emplace_front(pair_count);//イテレータを最前部
+				//rresult_list_iretator = *rresult_list_iretator.emplace_front(pair_count);//イテレータを最前部
 				//it = result_list.at(result_list_column).insert(it, to_string(pair_count));//ペアのカウント
 
 				//cout << result_list.at(data_column).size() << endl;
 				//result_list.at(data_column).resize(11);
 				//cout << result_list.at(data_column).size() << endl;
 
-				++result_list_iretator;
-
+				
+				
 			
 				++num_of_pairs;
+				++result_list_iretator;
 				++result_list_column;//CSVファイルの改行
 
-			}
+			
 
+		
+		/*	cout << except_number_list.size() << endl;
+			for (int i = 0; i < except_number_list.size(); ++i) {
+				cout << "exceptNum:" << except_number_list.at(i) << endl;
+			}*/
+
+			}
 			//vector<string>().shrink_to_fit();
 
 			++data_column;
 			i_count = 0;
-			pair_count = 0;
-			pair_list.clear();
+
 			//cout << "data_column:" << data_column << endl;//ループ回数の確認
 			//cout << "NumfOfRoop:" << NumOfRoop << endl;//ループ回数の確認
-		}
+		//}
+
 		
+		pair_count = 0;
+		pair_list.clear();
 		result_list.resize(num_of_pairs);//ペア数分の行数にリサイズ
 		AllRoop += NumOfRoop;//AllRoopに加算
 	}
+	//cout << except_number_list.size() << endl;
 	cout << AllRoop<<endl;//全ループ回数の確認
 	
 
