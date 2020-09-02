@@ -23,7 +23,7 @@ public:
 		list<vector<string>> mList;
 
 		vector<vector<int>> mVectorDates;//データを格納するvector
-		//vector<list<int>> mIntVectorDates;
+	
 		vector<list<int>> ks;
 
 
@@ -31,7 +31,7 @@ public:
 		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };*/
 
 		const vector<vector<int>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
-		const vector<list<int>>  LoadCSVDataInt(string& ioFile);//CSVデータを読み込む関数
+	
 
 		//const list<vector<string>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
 

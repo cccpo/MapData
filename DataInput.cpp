@@ -40,74 +40,9 @@ const vector<vector<int>> DataInput:: LoadCSVData(string& ioFile) {
 	}
 	mVectorDates.erase(mVectorDates.begin());
 
-	
-
-
-
-
 	return mVectorDates;
 }
 
-const vector<list<int>> DataInput::LoadCSVDataInt(string& ioFile) {
-	string file_path = data_tool.SetFilePath(ioFile);
-	//vector<list<int>> mIntVectorDates;
-
-	ifstream input_file(file_path);
-	vector<list<int>>::iterator m_vector_iterator = ks.begin();
-	
-
-
-	vector<string>::iterator data_set_iterator2nd;
-	list<int>::iterator data_set_iterator;
-	string line;
-
-
-	int data_column = 0;
-	int data_row = 0;
-
-	//cout <<  << endl;
-	
-	data_set_iterator = m_vector_iterator->begin();
-
-	
-	//全行読み込む CSV→vector<list<string>>
-	while (getline(input_file, line)) {
-		list<int> numdata_set = data_tool.SplitNumber(line, ',');
-		
-
-
-		//Case1 データを格納
-		//for (int data_row = 1; data_row < data_set.size(); ++data_row) {
-		//	mVectorDates.at(data_column).at(data_row) = data_set.at(data_row);
-		//	//cout << mVectorDates.at(data_column).at(data_row);
-		//}
-		
-
-
-
-		//Case2 データを格納
-		for (auto it = numdata_set.begin(); it != numdata_set.end(); ++it) {
-			
-			//ks.at(data_column).at(data_row) = *it;
-			
-			//data_set_iterator.
-			//
-			//mVectorDates.at(data_column).emplace_back(*it);
-			//cout << *it;
-			//cout << *data_set_iterator;
-		}
-
-		//cout << endl;
-		++data_set_iterator;
-		//++m_vector_iterator;
-		++data_column;
-	}
-
-	
-	//cout << data_column << endl;
-
-	return ks;
-}
 
 
 //const vector<vector<string>> DataInput::LoadCSVData(string& ioFile) {
