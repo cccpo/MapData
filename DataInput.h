@@ -31,9 +31,6 @@ public:
 		inline string GetPlayIDData (const int& inPlayerId, const int& num) { return mVectorDates.at(inPlayerId).at(num); };*/
 
 		const vector<vector<int>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
-	
-
-		//const list<vector<string>>  LoadCSVData(string& ioFile);//CSVデータを読み込む関数
 
 		//vector<int> GetFileData(const string& filename, vector<string>& ioVectorDatas);//入力したファイルデータから
 		

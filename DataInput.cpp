@@ -45,33 +45,6 @@ const vector<vector<int>> DataInput:: LoadCSVData(string& ioFile) {
 
 
 
-//const vector<vector<string>> DataInput::LoadCSVData(string& ioFile) {
-//	string file_path = data_tool.SetFilePath(ioFile);
-//
-//	ifstream input_file(file_path);
-//	string line;
-//	int data_column = 0;
-//
-//	//全行読み込む
-//	while (getline(input_file, line)) {
-//		vector<string> data_set = data_tool.Split(line, ',');
-//
-//		//データを格納
-//		for (int data_row = 0; data_row < data_set.size(); data_row++) {
-//			mVectorDates.at(data_column).at(data_row) = data_set.at(data_row);
-//
-//			//cout << mVectorDates.at(data_column).at(data_row);
-//		}
-//
-//		//cout << endl;
-//		++data_column;
-//	}
-//
-//	//cout << data_column << endl;
-//
-//	return mVectorDates;
-//}
-
 //入力したファイルデータから
 //vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
 //	ifstream ifs(inFileName);
