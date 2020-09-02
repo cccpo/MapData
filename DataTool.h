@@ -29,7 +29,7 @@ public:
 	inline string const SetFilePath(string& inFileName) { return "resource/"+inFileName;};
 
 	bool GetFileNames(string inFolderPath, vector<string>& inFileName);
-	const bool IsExitNumber(list<int>& inVector, int& inNumber);
+	const bool IsExitNumber(vector<int>& inVector, int& inNumber);
 
 	const void MakeResultData(vector<list<int>>& inDataList, string inFileName);
 	const void MakeResultDataInt(vector<list<int>>& inDataList, string inFileName);
