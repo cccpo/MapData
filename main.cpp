@@ -5,6 +5,8 @@
 #include "DataSort.h"
 #include "Data.h"
 
+#define DBG_ASSERT()
+
 using namespace std;
 
 
@@ -16,21 +18,20 @@ int main() {
 
 	string file_name = "BeforeData.csv";//読み込む対象
 
+//テストデータ生成
 	//start = chrono::high_resolution_clock::now();//計測開始
 	//data.GenerateTestData(file_name);//テストデータ生成実行関数
 	//end = chrono::high_resolution_clock::now();//計測終了
 	//double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	//cout << "Time:" << time << endl;
 
-//テストデータ読み込みと生成まで
+//テストデータ読み込みと抽出結果の出力まで
 	start = chrono::high_resolution_clock::now();//計測開始
 	data.LoadTestData(file_name);//CSVデータの読み込み実行関数
 	end = chrono::high_resolution_clock::now();//計測終了
 
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	cout << "[Data::LoadTestData]Time:" << time << endl;
-
-//格納したテストデータを確認する
+	cout << "[main]Time:" << time << endl;
 
 	return 0;
 }
