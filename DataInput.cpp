@@ -1,6 +1,6 @@
 #include "DataInput.h"
 
-DataInput::DataInput() :mVectorDates(10001, vector<int>(10)),ks(10001){
+DataInput::DataInput() :mVectorDates(10001, vector<int>(10)){
 	
 }
 
@@ -28,14 +28,9 @@ const vector<vector<int>> DataInput:: LoadCSVData(string& ioFile) {
 		//データを格納
 		for (auto it = data_set.begin(); it != data_set.end(); ++it) {
 			*mm_vector_iterator = *it;
-			//cout << *mm_vector_iterator;
 			++mm_vector_iterator;
 		}
-
-		//cout << endl;
 		++m_vector_iterator;
-	
-
 
 	}
 	mVectorDates.erase(mVectorDates.begin());
@@ -43,41 +38,6 @@ const vector<vector<int>> DataInput:: LoadCSVData(string& ioFile) {
 	return mVectorDates;
 }
 
-
-
-//入力したファイルデータから
-//vector<int> DataInput::GetFileData(const string& inFileName, vector<string>& ioVectorDatas) {
-//	ifstream ifs(inFileName);
-//	list<string> player_route,player_id, player_route2;
-//	list<int> pls_in;
-//
-//	if (!ifs)
-//	{
-//		//cout << "Error"<< endl;
-//	}
-//
-//	string tmp;
-//	while (getline(ifs, tmp)) {
-//		ioVectorDatas.emplace_back(tmp);
-//	}
-//
-//	/*cout << tmp << endl;*/
-//
-//	player_id = data_tool.Split(ioVectorDatas[0], ':');//分割
-//	player_id.erase(player_id.begin());
-//	
-//	player_route = data_tool.Split(ioVectorDatas[1],':');
-//	player_route.erase(player_route.begin());
-//
-//	player_route = data_tool.Split(player_route[0], '.');
-//
-//	pls_in=ConvertFileData(player_route);
-//
-//	return pls_in;
-//
-//
-//
-//}
 
 list<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 	string tesu_a;
@@ -108,15 +68,7 @@ list<int> DataInput::ConvertFileData(vector<string>& ioVectorDatas) {
 	return lisya;
 }
 
-vector<string> DataInput::SearchPlayerData(string inPlayerID) {
 
-	//for (int i = 0; i < mVectorDates.size(); i++) {
-	//	if (mVectorDates.at(i).at(0) == inPlayerID) {
-	//		return mVectorDates.at(i);
-	//	}
-	//}
-
-}
 
 //引数としたプレイヤーネームが存在するかを検索するシステム
 bool DataInput::IsExitPlayerID(string inPlayerID) {
@@ -130,8 +82,4 @@ bool DataInput::IsExitPlayerID(string inPlayerID) {
 	cout << "Can't find" << inPlayerID << endl;
 	return false;
 
-}
-
-void DataInput::Sort() {
-	//data_sort.DeleteKeyCategory(mVectorDates);
 }
