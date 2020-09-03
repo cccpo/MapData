@@ -130,7 +130,7 @@ const void DataTool::MakeResultData(vector<list<int>>& inDataList, string inFile
         for (list<int>::iterator mm_vector_iterator = (*m_vector_iterator).begin();
             mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
 
-            cout << *mm_vector_iterator;
+            //cout << *mm_vector_iterator;
             data_sort_result << *mm_vector_iterator << ",";
          
         }

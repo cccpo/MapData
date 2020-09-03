@@ -120,9 +120,9 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 		if (!data_tool.IsExitNumber(except_number_list, data_column)) {
 			//cout << data_column << endl;
 
-			m_vector_iterator2nd = m_vector_iterator+1;
+		
 			//除外リストに含まれていない場合処理を行う
-			for (m_vector_iterator2nd; m_vector_iterator2nd != inDataList.end();++m_vector_iterator2nd) {
+			for (m_vector_iterator2nd = m_vector_iterator + 1; m_vector_iterator2nd != inDataList.end();++m_vector_iterator2nd) {
 				
 				//合致する経路があれば抽出、同一のペア数をカウント
 				if (*m_vector_iterator == *m_vector_iterator2nd) {
@@ -160,14 +160,14 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 				//string number = to_string(pair_count);
 				//cout << "No." << data_column << "'s Pair: ";
 
-				for (int l=0; l < pair_list.size(); ++l) {
-					string s_pair = to_string(pair_list.at(l));
-					//cout << pair_list.at(l);
-					//except_number_list.emplace_back(pair_list.at(l));//除外リストに追加
-					
-					
-					cout << "No." << pair_list.at(l)<<" ";
-				}
+				//for (int l=0; l < pair_list.size(); ++l) {
+				//	string s_pair = to_string(pair_list.at(l));
+				//	//cout << pair_list.at(l);
+				//	//except_number_list.emplace_back(pair_list.at(l));//除外リストに追加
+				//	
+				//	
+				//	cout << "No." << pair_list.at(l)<<" ";
+				//}
 
 
 				*rresult_list_iretator = pair_count;
@@ -180,25 +180,8 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 					
 				}
 
-				cout << endl;
-
-				
-				//cout << "Pair:" << pair_count << endl;
 				//cout << endl;
-				//inDataList.erase(inDataList.begin() + i);
-				//result_list.at(result_list_column).emplace_back(to_string(pair_count));
-				//for (mm_vector_iterator = (*m_vector_iterator2nd).begin(); mm_vector_iterator != (*m_vector_iterator2nd).end(); ++mm_vector_iterator) {
-				//	cout << *mm_vector_iterator;
-				//}
 
-				//rresult_list_iretator = *rresult_list_iretator.emplace_front(pair_count);//イテレータを最前部
-				//it = result_list.at(result_list_column).insert(it, to_string(pair_count));//ペアのカウント
-
-				//cout << result_list.at(data_column).size() << endl;
-				//result_list.at(data_column).resize(11);
-				//cout << result_list.at(data_column).size() << endl;
-
-				
 				
 			
 				++num_of_pairs;
