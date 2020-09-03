@@ -111,13 +111,13 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 
 		NumOfRoop = 0;//ループ回数をカウントする
 		
-					  //cout << "[DataColumn:"<<data_column <<"]" <<endl;
+		//cout << "[DataColumn:"<<data_column <<"]" <<endl;
 	/*	for (auto ex_it = except_number_list.begin(); ex_it != except_number_list.end(); ++ex_it) {
 			cout << *ex_it << endl;
 		}*/
 
 		//除外リストに入っているかを確認
-		//if (!data_tool.IsExitNumber(except_number_list, data_column)) {
+		if (!data_tool.IsExitNumber(except_number_list, data_column)) {
 			//cout << data_column << endl;
 
 			m_vector_iterator2nd = m_vector_iterator+1;
@@ -216,22 +216,23 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 			}
 			//vector<string>().shrink_to_fit();
 
-			++data_column;
-			i_count = 0;
+			
+		}
 
-			//cout << "data_column:" << data_column << endl;//ループ回数の確認
-			//cout << "NumfOfRoop:" << NumOfRoop << endl;//ループ回数の確認
-		//}
+		++data_column;
+		i_count = 0;
 
-		
+		//cout << "data_column:" << data_column << endl;//ループ回数の確認
+		//cout << "NumfOfRoop:" << NumOfRoop << endl;//ループ回数の確認
 		pair_count = 0;
 		pair_list.clear();
+
 		
 		AllRoop += NumOfRoop;//AllRoopに加算
 	}
 	result_list.resize(num_of_pairs);//ペア数分の行数にリサイズ
 	//cout << except_number_list.size() << endl;
-	cout << AllRoop<<endl;//全ループ回数の確認
+	//cout << AllRoop<<endl;//全ループ回数の確認
 	
 	cout << result_list.size() << endl;
 
