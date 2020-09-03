@@ -1,16 +1,12 @@
 #pragma once
 #include <vector>
-#include <algorithm>
+#include <list>
 #include <iterator>
 #include <string>
-#include <iostream>
-#include <fstream>
-#include <list>
 
 #include "DataTool.h"
 
 using namespace std;
-
 
 class DataSort{
 public:
