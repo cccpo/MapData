@@ -68,7 +68,7 @@ const vector<list<int>> DataSort::IntDeleteKeyCategory(vector<vector<string>>& i
 
 //データの抽出を行う
 const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
-	vector<list<int>> result_list(100, list<int>(11));
+	vector<list<int>> result_list(100, list<int>(11));//結果を格納するリスト
 	
 	vector<int> pair_list;//組み合わせが見つかった経路を格納する
 
@@ -78,9 +78,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 
 
 	vector<int>::iterator mm_vector_iterator;
-	vector<int>::iterator mm_vector_iterator2nd;
-	vector<int>::iterator mm_vector_iterator3rd = (*m_vector_iterator).begin();
-
+	
 	
 	vector<int> except_number_list;//除外リスト
 
@@ -97,10 +95,9 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 	int num_of_pairs = 0;//複数人使用した経路数をカウントする
 
 	int data_column = 0;
-	int data_row;
+	
 
 	//cout << inDataList.size() << endl;
-	//cout << *mm_vector_iterator3rd << endl;
 
 	//cout << result_list.size() << endl;
 	//cout << result_list.at(1).size() << endl;
@@ -112,10 +109,9 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 	//データの行数分回す
 	for (m_vector_iterator = inDataList.begin(); m_vector_iterator != inDataList.end(); ++m_vector_iterator) {
 
-		NumOfRoop = 0;
-
-		data_row = 0;
-		//cout << "[DataColumn:"<<data_column <<"]" <<endl;
+		NumOfRoop = 0;//ループ回数をカウントする
+		
+					  //cout << "[DataColumn:"<<data_column <<"]" <<endl;
 	/*	for (auto ex_it = except_number_list.begin(); ex_it != except_number_list.end(); ++ex_it) {
 			cout << *ex_it << endl;
 		}*/
@@ -132,7 +128,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 				if (*m_vector_iterator == *m_vector_iterator2nd) {
 					//cout << "roop_count:" << data_row << endl;
 					//合致した値を確認する
-					for (mm_vector_iterator = (*m_vector_iterator2nd).begin(); mm_vector_iterator != (*m_vector_iterator2nd).end();++mm_vector_iterator) {
+					for (vector<int>::iterator mm_vector_iterator = (*m_vector_iterator2nd).begin(); mm_vector_iterator != (*m_vector_iterator2nd).end();++mm_vector_iterator) {
 						//cout << *mm_vector_iterator;
 					}
 					
@@ -149,7 +145,7 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 				
 				}
 				
-				++data_row;
+			
 				++NumOfRoop;
 			}
 
