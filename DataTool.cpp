@@ -107,12 +107,23 @@ bool DataTool::GetFileNames(string inFolderPath, vector<string>& inFileName)
 }
 
 const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
+    chrono::high_resolution_clock::time_point start, end;
+    start = chrono::high_resolution_clock::now();//計測開始
+
     auto itr = find(inVector.begin(), inVector.end(), inNumber);
     size_t index = distance(inVector.begin(), itr);
    
+    //cout << inNumber << ":";
     if (index != inVector.size()) {
+        //cout << "ExitNumber:" << inNumber << endl;
+        //end = chrono::high_resolution_clock::now();//計測終了
+        //double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+        //cout << "[DataTool::IsExitNumber]Time:" << time << endl;
         return true;
     }else {
+        //end = chrono::high_resolution_clock::now();//計測終了
+        //double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+        //cout << "[DataTool::IsExitNumber]time:" << time << endl;
         return false;
     }
 }

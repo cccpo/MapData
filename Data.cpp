@@ -23,14 +23,14 @@ const void Data::LoadTestData(string& inFileName) {
 	
 	cout << "Load Data..." << endl;
 
-	start = chrono::high_resolution_clock::now();//計測開始
+	//start = chrono::high_resolution_clock::now();//計測開始
 	
 	mVectorDates = data_input.LoadCSVData(inFileName);//CSVファイルからデータを抽出し、メンバ変数に格納
 
-	end = chrono::high_resolution_clock::now();//計測終了
+	//end = chrono::high_resolution_clock::now();//計測終了
 
-	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-	cout << "[DataInput::LoadCSVData]Time:" << time << endl;
+	/*double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	cout << "[DataInput::LoadCSVData]Time:" << time << endl;*/
 
 	cout << "Loading Completed" << endl;
 
@@ -40,7 +40,7 @@ const void Data::LoadTestData(string& inFileName) {
 
 	end = chrono::high_resolution_clock::now();//計測終了
 
-	time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	cout << "[DataSort::ExtractData]Time:" << time << endl;
 
 
