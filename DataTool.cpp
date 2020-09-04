@@ -108,17 +108,26 @@ bool DataTool::GetFileNames(string inFolderPath, vector<string>& inFileName)
 
 const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
     chrono::high_resolution_clock::time_point start, end;
-    start = chrono::high_resolution_clock::now();//計測開始
+    //start = chrono::high_resolution_clock::now();//計測開始
 
    // const int X = inNumber;
 
     //auto x = [](int i) {return i = inNumber; };
-
+    cout << "ExitNumber:" << inNumber << endl;
+    start = chrono::high_resolution_clock::now();//計測開始
     auto itr = find(inVector.begin(), inVector.end(), inNumber);
+    end = chrono::high_resolution_clock::now();//計測終了
+    double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+    cout << "[Find]Time:" << time << endl;
+    
+    cout << "ExitNumber:" << inNumber << endl;
+    start = chrono::high_resolution_clock::now();//計測開始
+    auto itt = binary_search(inVector.begin(), inVector.end(), inNumber);
+    end = chrono::high_resolution_clock::now();//計測終了
+    time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+    cout << "[binary_search]Time:" << time << endl;
+  
 
-
-
-    //cout << xa << endl;
     size_t index = distance(inVector.begin(), itr);
    
     //cout << inNumber << ":";
@@ -134,6 +143,7 @@ const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
         //cout << "[DataTool::IsExitNumber]time:" << time << endl;
         return false;
     }
+    /*return itt;*/
 }
 
 //抽出結果をCSVデータに出力する

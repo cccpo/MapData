@@ -51,7 +51,7 @@ const void Data::ExtractPlayerCourceData(vector<vector<int>>& inDate) {
 
 	mPriorityDates = data_sort.ExtractData(inDate);
 
-	string output_file_name = "AfterData2nd.csv";
+	string output_file_name = "AfterData3rd.csv";
 
 	data_tool.MakeResultData(mPriorityDates, output_file_name);
 
