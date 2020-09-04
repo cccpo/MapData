@@ -110,7 +110,15 @@ const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
     chrono::high_resolution_clock::time_point start, end;
     start = chrono::high_resolution_clock::now();//Œv‘ªŠJŽn
 
+   // const int X = inNumber;
+
+    //auto x = [](int i) {return i = inNumber; };
+
     auto itr = find(inVector.begin(), inVector.end(), inNumber);
+
+
+
+    //cout << xa << endl;
     size_t index = distance(inVector.begin(), itr);
    
     //cout << inNumber << ":";

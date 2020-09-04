@@ -80,10 +80,6 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 	
 	vector<int> except_number_list;//除外リスト
 
-
-	
-
-	int i_count=0;
 	int pair_count = 0;//ペア数をカウントする
 	int num_of_pairs = 0;//複数人使用した経路数をカウントする
 
@@ -187,9 +183,9 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 		}
 
 		++data_column;
-		i_count = 0;
 
-		cout << "NumfOfRoop:" << data_column << endl;//ループ回数の確認
+
+		//cout << "NumfOfRoop:" << data_column << endl;//ループ回数の確認
 		pair_count = 0;
 		pair_list.clear();
 
