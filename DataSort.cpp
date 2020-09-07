@@ -135,23 +135,6 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 			if (pair_count >= 3) {
 				rresult_list_iretator = (*result_list_iretator).begin();
 
-				
-				//*result_list_iretator = *m_vector_iterator;
-				
-
-				//string number = to_string(pair_count);
-				//cout << "No." << data_column << "'s Pair: ";
-
-				//for (int l=0; l < pair_list.size(); ++l) {
-				//	string s_pair = to_string(pair_list.at(l));
-				//	//cout << pair_list.at(l);
-				//	//except_number_list.emplace_back(pair_list.at(l));//除外リストに追加
-				//	
-				//	
-				//	cout << "No." << pair_list.at(l)<<" ";
-				//}
-
-
 				*rresult_list_iretator = pair_count;//ペア数を追加する
 				for (mm_vector_iterator = (*m_vector_iterator).begin(); mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
 					++rresult_list_iretator;
@@ -159,26 +142,9 @@ const vector<list<int>> DataSort::ExtractData(vector<vector<int>>& inDataList) {
 				/*	cout << *mm_vector_iterator;*/
 					
 				}
-
-				//cout << endl;
-
-				
-			
+	
 				++num_of_pairs;
 				++result_list_iretator;
-
-
-			
-
-		
-		/*	cout << except_number_list.size() << endl;
-			for (int i = 0; i < except_number_list.size(); ++i) {
-				cout << "exceptNum:" << except_number_list.at(i) << endl;
-			}*/
-
-			}
-			//vector<string>().shrink_to_fit();
-
 			
 		}
 

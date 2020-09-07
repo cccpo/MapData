@@ -33,5 +33,9 @@ int main() {
 	double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
 	cout << "[main]Time:" << time << endl;
 
+	//cout << "Please Input Something";
+	//int input;
+	//std::cin >> input;
+
 	return 0;
 }

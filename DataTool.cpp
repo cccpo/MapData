@@ -113,19 +113,19 @@ const bool DataTool::IsExitNumber(vector<int>& inVector, int& inNumber) {
    // const int X = inNumber;
 
     //auto x = [](int i) {return i = inNumber; };
-    cout << "ExitNumber:" << inNumber << endl;
-    start = chrono::high_resolution_clock::now();//計測開始
+    //cout << "ExitNumber:" << inNumber << endl;
+    //start = chrono::high_resolution_clock::now();//計測開始
     auto itr = find(inVector.begin(), inVector.end(), inNumber);
-    end = chrono::high_resolution_clock::now();//計測終了
-    double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-    cout << "[Find]Time:" << time << endl;
-    
-    cout << "ExitNumber:" << inNumber << endl;
-    start = chrono::high_resolution_clock::now();//計測開始
-    auto itt = binary_search(inVector.begin(), inVector.end(), inNumber);
-    end = chrono::high_resolution_clock::now();//計測終了
-    time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
-    cout << "[binary_search]Time:" << time << endl;
+    //end = chrono::high_resolution_clock::now();//計測終了
+    //double time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+    //cout << "[Find]Time:" << time << endl;
+    //
+    //cout << "ExitNumber:" << inNumber << endl;
+    //start = chrono::high_resolution_clock::now();//計測開始
+    //auto itt = binary_search(inVector.begin(), inVector.end(), inNumber);
+    //end = chrono::high_resolution_clock::now();//計測終了
+    //time = static_cast<double>(chrono::duration_cast<chrono::microseconds>(end - start).count() / 1000.0);
+    //cout << "[binary_search]Time:" << time << endl;
   
 
     size_t index = distance(inVector.begin(), itr);
@@ -153,15 +153,22 @@ const void DataTool::MakeResultData(vector<list<int>>& inDataList, string inFile
     ofstream data_sort_result(file_path);//出力形式
     data_sort_result << "Num" << "," << "Cource" << endl;
 
+    int counter;
     for (vector<list<int>>::iterator m_vector_iterator = inDataList.begin();
         m_vector_iterator!= inDataList.end(); ++m_vector_iterator) {
         
         for (list<int>::iterator mm_vector_iterator = (*m_vector_iterator).begin();
             mm_vector_iterator != (*m_vector_iterator).end(); ++mm_vector_iterator) {
+            counter = 0;
+
+            if (mm_vector_iterator == (*m_vector_iterator).begin()) {
+                data_sort_result << *mm_vector_iterator << ",";
+            }
 
             //cout << *mm_vector_iterator;
-            data_sort_result << *mm_vector_iterator << ",";
-         
+            data_sort_result <<"{" <<counter <<"." <<*mm_vector_iterator << "},";
+            
+            ++counter;
         }
 
         data_sort_result << endl;
